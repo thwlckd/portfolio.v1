@@ -1,3 +1,7 @@
 export default function Contact() {
-  return <div className="min-h-screen bg-blue-500">contact 이메일</div>;
+  return (
+    <div id="contact" className="min-h-screen bg-blue-500">
+      contact 이메일
+    </div>
+  );
 }
