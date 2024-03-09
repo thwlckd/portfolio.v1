@@ -1,3 +1,17 @@
-export default function Home() {
-  return <div className="bg-gray-100">home</div>;
+import Home from '@/components/Home';
+import About from '@/components/About';
+import Skill from '@/components/Skill';
+import Project from '@/components/Project';
+import Contact from '@/components/Contact';
+
+export default function Main() {
+  return (
+    <>
+      <Home />
+      <About />
+      <Skill />
+      <Project />
+      <Contact />
+    </>
+  );
 }
