@@ -20,14 +20,13 @@ const Provider = ({ children }: { children: ReactNode }) => {
           (entries) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
-                console.log(entry.target.id);
                 document
                   .getElementById(entry.target.id + '-bullet')
-                  ?.classList.add('min-w-10', 'min-h-10', 'bg-slate-400');
+                  ?.classList.add('active-bullet');
               } else {
                 document
                   .getElementById(entry.target.id + '-bullet')
-                  ?.classList.remove('min-w-10', 'min-h-10', 'bg-slate-400');
+                  ?.classList.remove('active-bullet');
               }
             });
           },

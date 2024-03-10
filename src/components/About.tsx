@@ -9,8 +9,8 @@ export default function About() {
   useRefObserver(aboutRef);
 
   return (
-    <div id="about" className="min-h-screen bg-blue-200" ref={aboutRef}>
+    <section id="about" className="min-h-screen" ref={aboutRef}>
       about 사진 자기소개 핵심가치(together, dx, intuitive)
-    </div>
+    </section>
   );
 }

@@ -9,8 +9,8 @@ export default function Home() {
   useRefObserver(homeRef);
 
   return (
-    <div id="home" className="min-h-screen bg-blue-100" ref={homeRef}>
+    <section id="home" className="min-h-screen" ref={homeRef}>
       Home 이름애니메이션 배경
-    </div>
+    </section>
   );
 }

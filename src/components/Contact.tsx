@@ -9,8 +9,8 @@ export default function Contact() {
   useRefObserver(contactRef);
 
   return (
-    <div id="contact" className="min-h-screen bg-blue-500" ref={contactRef}>
+    <section id="contact" className="min-h-screen" ref={contactRef}>
       contact 이메일
-    </div>
+    </section>
   );
 }

@@ -7,8 +7,8 @@ export default function Project() {
   useRefObserver(projectRef);
 
   return (
-    <div id="project" className="min-h-screen bg-blue-400" ref={projectRef}>
+    <section id="project" className="min-h-screen" ref={projectRef}>
       project 프로젝트카드 모달
-    </div>
+    </section>
   );
 }

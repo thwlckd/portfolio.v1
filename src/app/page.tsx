@@ -1,13 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import { Children, useContext } from 'react';
+import { Children } from 'react';
 import Home from '@/components/Home';
 import About from '@/components/About';
 import Skill from '@/components/Skill';
 import Project from '@/components/Project';
 import Contact from '@/components/Contact';
-import { ObserverContext } from './provider';
 
 export default function Main() {
   return (
@@ -32,7 +31,9 @@ const SideBar = () => {
           <li>
             <Link
               id={`${section}-bullet`}
-              className="block w-3 h-3 rounded-full bg-gray-500 transition-all"
+              className={
+                'block w-3 h-3 rounded-full bg-gray-500 opacity-50 transition-all duration-300'
+              }
               href={`#${section}`}
             ></Link>
           </li>

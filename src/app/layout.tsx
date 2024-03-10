@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <Provider>
-        <body className={(inter.className, 'min-h-screen bg-gray-300')}>
+        <body className={(inter.className, 'min-h-screen bg-gray-50')}>
           {children}
         </body>
       </Provider>

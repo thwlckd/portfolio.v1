@@ -7,8 +7,8 @@ export default function Skill() {
   useRefObserver(skillRef);
 
   return (
-    <div id="skill" className="min-h-screen bg-blue-300" ref={skillRef}>
+    <section id="skill" className="min-h-screen" ref={skillRef}>
       skill 기술스택 이미지 → 애니메이션
-    </div>
+    </section>
   );
 }
