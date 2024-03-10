@@ -1,10 +1,13 @@
+'use client';
+
 import Link from 'next/link';
-import { Children } from 'react';
+import { Children, useContext } from 'react';
 import Home from '@/components/Home';
 import About from '@/components/About';
 import Skill from '@/components/Skill';
 import Project from '@/components/Project';
 import Contact from '@/components/Contact';
+import { ObserverContext } from './provider';
 
 export default function Main() {
   return (
@@ -19,17 +22,18 @@ export default function Main() {
   );
 }
 
-const SECTIONS = ['#home', '#about', '#skill', '#project', '#contact'];
+const SECTIONS = ['home', 'about', 'skill', 'project', 'contact'];
 
 const SideBar = () => {
   return (
-    <ul className="fixed top-0 left-10 flex flex-col justify-center gap-10 h-screen z-50">
+    <ul className="fixed top-0 left-10 flex flex-col justify-center items-center gap-10 w-10 h-screen z-50">
       {Children.toArray(
         SECTIONS.map((section) => (
           <li>
             <Link
-              className="block w-5 h-5 rounded-full bg-black"
-              href={section}
+              id={`${section}-bullet`}
+              className="block w-3 h-3 rounded-full bg-gray-500 transition-all"
+              href={`#${section}`}
             ></Link>
           </li>
         )),
