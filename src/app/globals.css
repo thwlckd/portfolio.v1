@@ -3,11 +3,20 @@
 @tailwind utilities;
 
 :root {
+  cursor: none;
   scroll-behavior: smooth !important;
+}
+
+a {
+  cursor: none;
+}
+
+.large-cursor {
+  width: 64px;
+  height: 64px;
 }
 
 .active-bullet {
   width: 20px;
   height: 20px;
-  background-color: lightgray;
 }

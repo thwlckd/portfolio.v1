@@ -1,8 +1,8 @@
-import Home from '@/components/Home';
-import About from '@/components/About';
-import Skill from '@/components/Skill';
-import Project from '@/components/Project';
-import Contact from '@/components/Contact';
+import Home from '@/components/section/Home';
+import About from '@/components/section/About';
+import Skill from '@/components/section/Skill';
+import Project from '@/components/section/Project';
+import Contact from '@/components/section/Contact';
 
 export default function Main() {
   return (
