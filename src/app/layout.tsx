@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Nunito } from 'next/font/google';
 import Provider from './provider';
+import { cn } from '@/utils';
 import Cursor from '@/components/common/Cursor';
 import Progressbar from '@/components/common/Progressbar';
 import Sidebar from '@/components/common/Sidebar';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const font = Nunito({ subsets: ['latin'], display: 'swap' });
 
 export const metadata: Metadata = {
   title: '프론트엔드 박창협 포트폴리오',
@@ -21,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <Provider>
-        <body className={(inter.className, 'min-h-screen bg-white')}>
+        <body className={cn(font.className, 'min-h-screen bg-white')}>
           <Cursor />
           <Progressbar />
           <Sidebar />
