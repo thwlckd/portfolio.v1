@@ -8,14 +8,20 @@ export default function Sidebar() {
     <ul className="fixed top-0 left-10 flex flex-col justify-center items-center gap-10 w-10 h-screen z-10">
       {Children.toArray(
         SECTIONS.map((section) => (
-          <li>
+          <li className="relative">
             <Link
               id={`${section}-bullet`}
               className={
-                'block w-3 h-3 rounded-full bg-black transition-all duration-300'
+                'block w-2 h-4 rounded-full bg-indigo-500 transition-all duration-300'
               }
               href={`#${section}`}
             ></Link>
+            <div
+              id={`${section}-tooltip`}
+              className="hidden absolute left-[30px] top-[-10px] p-2 rounded-lg border border-indigo-500 uppercase"
+            >
+              {section}
+            </div>
           </li>
         )),
       )}

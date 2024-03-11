@@ -23,10 +23,16 @@ const Provider = ({ children }: { children: ReactNode }) => {
                 document
                   .getElementById(entry.target.id + '-bullet')
                   ?.classList.add('active-bullet');
+                document
+                  .getElementById(entry.target.id + '-tooltip')
+                  ?.classList.remove('hidden');
               } else {
                 document
                   .getElementById(entry.target.id + '-bullet')
                   ?.classList.remove('active-bullet');
+                document
+                  .getElementById(entry.target.id + '-tooltip')
+                  ?.classList.add('hidden');
               }
             });
           },
