@@ -11,6 +11,11 @@ a {
   cursor: none;
 }
 
+::selection {
+  background-color: rgb(99 102 241);
+  color: white;
+}
+
 .large-cursor {
   width: 64px;
   height: 64px;
