@@ -18,7 +18,7 @@ export default function Sidebar() {
             ></Link>
             <div
               id={`${section}-tooltip`}
-              className="hidden absolute left-[30px] top-[-10px] p-2 rounded-lg border border-indigo-500 uppercase"
+              className="hidden absolute left-[30px] top-[-10px] p-2 bg-white rounded-lg border border-indigo-500 uppercase"
             >
               {section}
             </div>
