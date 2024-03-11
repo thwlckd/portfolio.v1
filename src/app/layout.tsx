@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Provider from './provider';
 import Cursor from '@/components/common/Cursor';
+import Progressbar from '@/components/common/Progressbar';
 import Sidebar from '@/components/common/Sidebar';
 import './globals.css';
 
@@ -22,6 +23,7 @@ export default function RootLayout({
       <Provider>
         <body className={(inter.className, 'min-h-screen bg-white')}>
           <Cursor />
+          <Progressbar />
           <Sidebar />
           {children}
         </body>
