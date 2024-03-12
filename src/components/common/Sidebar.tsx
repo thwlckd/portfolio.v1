@@ -12,7 +12,7 @@ export default function Sidebar() {
             <Link
               id={`${section}-bullet`}
               className={
-                'block w-2 h-4 rounded-full bg-indigo-500 transition-all duration-300'
+                'block w-2 h-4 rounded-full bg-indigo-500 hover:w-4 transition-all duration-300'
               }
               href={`#${section}`}
             ></Link>
