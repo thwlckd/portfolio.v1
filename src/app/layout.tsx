@@ -5,6 +5,7 @@ import { cn } from '@/utils';
 import Cursor from '@/components/common/Cursor';
 import Progressbar from '@/components/common/Progressbar';
 import Sidebar from '@/components/common/Sidebar';
+import Home from '@/components/section/Home';
 import './globals.css';
 
 const font = Nunito({ subsets: ['latin'], display: 'swap' });
@@ -26,7 +27,8 @@ export default function RootLayout({
           <Cursor />
           <Progressbar />
           <Sidebar />
-          {children}
+          <Home />
+          <main className="ml-[200px]">{children}</main>
         </body>
       </Provider>
     </html>
