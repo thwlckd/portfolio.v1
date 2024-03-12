@@ -4,20 +4,27 @@ import Image from 'next/image';
 import { Children, useRef } from 'react';
 import { GiMoebiusTriangle } from 'react-icons/gi';
 import useRefObserver from '@/hooks/useRefObserver';
+import { motion } from 'framer-motion';
 
 export default function About() {
   const aboutRef = useRef(null);
 
   useRefObserver(aboutRef);
+
   return (
-    <section
+    <motion.section
       id="about"
-      className=" grid grid-flow-col grid-cols-2 min-h-screen"
+      className=" grid grid-flow-col grid-cols-2 min-h-screen  transition-all"
       ref={aboutRef}
+      initial={{ opacity: 0.2 }}
+      whileInView={{
+        opacity: 1,
+      }}
+      viewport={{ amount: 0.3 }}
     >
       <Profile />
       <Career />
-    </section>
+    </motion.section>
   );
 }
 
