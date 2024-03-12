@@ -27,3 +27,21 @@ a {
   width: 12px;
   height: 24px;
 }
+
+.underline {
+  text-decoration: dashed;
+  display: block;
+  border-bottom: solid 1px black;
+}
+
+/* .underline:after {
+  display: block;
+  content: '';
+  border-bottom: solid 3px #ea2129;
+  transform: scaleX(1);
+  transition: transform 250ms ease-in-out;
+}
+
+.underline:hover:after {
+  transform: scaleX(1);
+} */
