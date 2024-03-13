@@ -1,6 +1,7 @@
 'use client';
 
-import { Children, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 import {
   SiCss3,
   SiExpress,
@@ -136,23 +137,33 @@ export default function Skill() {
           </li>
         </ul>
       </nav>
-      <div className="grid grid-cols-5 gap-10">
-        {Children.toArray(
-          category.map(({ icon, backgroundColor, name }) => (
-            <div>
-              <div
-                className={cn(
-                  'flex justify-center items-center w-20 h-20 rounded-full overflow-hidden hover:rotate-[360deg] transition-transform duration-1000',
-                  backgroundColor,
-                )}
-              >
-                {icon}
-              </div>
-              <p className="w-20 mt-2 text-center leading-tight">{name}</p>
+      <motion.div
+        className="grid grid-cols-5 gap-10"
+        initial={{ x: '200%' }}
+        whileInView={{
+          x: 0,
+        }}
+        transition={{ type: 'spring' }}
+      >
+        {category.map(({ icon, backgroundColor, name }) => (
+          <motion.div
+            key={name}
+            initial={{ opacity: 0, y: '200%' }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: 'spring' }}
+          >
+            <div
+              className={cn(
+                'flex justify-center items-center w-20 h-20 rounded-full overflow-hidden hover:rotate-[360deg] transition-transform duration-1000',
+                backgroundColor,
+              )}
+            >
+              {icon}
             </div>
-          )),
-        )}
-      </div>
+            <p className="w-20 mt-2 text-center leading-tight">{name}</p>
+          </motion.div>
+        ))}
+      </motion.div>
     </section>
   );
 }
