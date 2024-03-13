@@ -127,13 +127,34 @@ export default function Skill() {
       <nav className="absolute top-[15%]">
         <ul className="flex justify-center gap-20 text-2xl font-bold">
           <li className="relative" onClick={() => setCategory(() => FRONT)}>
-            <a className="underline-hover">Front</a>
+            <a
+              className={cn(
+                'underline-hover transition-colors',
+                category === FRONT && 'text-indigo-500',
+              )}
+            >
+              Front
+            </a>
           </li>
           <li className="relative" onClick={() => setCategory(() => BACK)}>
-            <a className="underline-hover">Back</a>
+            <a
+              className={cn(
+                'underline-hover transition-colors',
+                category === BACK && 'text-indigo-500',
+              )}
+            >
+              Back
+            </a>
           </li>
           <li className="relative" onClick={() => setCategory(() => ETC)}>
-            <a className="underline-hover">Etc</a>
+            <a
+              className={cn(
+                'underline-hover transition-colors',
+                category === ETC && 'text-indigo-500',
+              )}
+            >
+              Etc
+            </a>
           </li>
         </ul>
       </nav>
