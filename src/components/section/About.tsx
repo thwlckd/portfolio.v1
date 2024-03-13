@@ -2,9 +2,9 @@
 
 import Image from 'next/image';
 import { Children, useRef } from 'react';
+import { motion } from 'framer-motion';
 import { GiMoebiusTriangle } from 'react-icons/gi';
 import useRefObserver from '@/hooks/useRefObserver';
-import { motion } from 'framer-motion';
 
 export default function About() {
   const aboutRef = useRef(null);
@@ -20,7 +20,7 @@ export default function About() {
       whileInView={{
         opacity: 1,
       }}
-      viewport={{ amount: 0.3 }}
+      viewport={{ amount: 0.5 }}
     >
       <Profile />
       <Career />
