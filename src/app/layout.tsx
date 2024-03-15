@@ -23,12 +23,13 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <Provider>
-        <body className={cn(font.className, 'min-h-screen bg-white')}>
+        <body className={cn(font.className, 'relative min-h-screen bg-white')}>
           <Cursor />
           <Progressbar />
           <Sidebar />
           <Home />
           <main className="ml-[200px]">{children}</main>
+          <div id="modal"></div>
         </body>
       </Provider>
     </html>
