@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { Children, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   SiCss3,
@@ -112,6 +112,21 @@ const ETC = [
   },
 ];
 
+const FIELD = [
+  {
+    field: FRONT,
+    name: 'Front',
+  },
+  {
+    field: BACK,
+    name: 'Back',
+  },
+  {
+    field: ETC,
+    name: 'Etc',
+  },
+];
+
 export default function Skill() {
   const skillRef = useRef(null);
   const [category, setCategory] = useState(FRONT);
@@ -126,36 +141,20 @@ export default function Skill() {
     >
       <nav className="absolute top-[15%]">
         <ul className="flex justify-center gap-20 text-2xl font-bold">
-          <li className="relative" onClick={() => setCategory(() => FRONT)}>
-            <a
-              className={cn(
-                'underline-hover transition-colors',
-                category === FRONT && 'text-indigo-500',
-              )}
-            >
-              Front
-            </a>
-          </li>
-          <li className="relative" onClick={() => setCategory(() => BACK)}>
-            <a
-              className={cn(
-                'underline-hover transition-colors',
-                category === BACK && 'text-indigo-500',
-              )}
-            >
-              Back
-            </a>
-          </li>
-          <li className="relative" onClick={() => setCategory(() => ETC)}>
-            <a
-              className={cn(
-                'underline-hover transition-colors',
-                category === ETC && 'text-indigo-500',
-              )}
-            >
-              Etc
-            </a>
-          </li>
+          {Children.toArray(
+            FIELD.map(({ field, name }) => (
+              <li className="relative" onClick={() => setCategory(() => field)}>
+                <a
+                  className={cn(
+                    'underline-hover transition-colors',
+                    category === field && 'text-indigo-500',
+                  )}
+                >
+                  {name}
+                </a>
+              </li>
+            )),
+          )}
         </ul>
       </nav>
       <motion.div
