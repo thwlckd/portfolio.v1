@@ -13,7 +13,7 @@ const PROJECTS: Project[] = [
     images: ['image.png', 'image.png', 'image.png', 'image.png', 'image.png'],
     git: 'https://github.com/thwlckd/plantopia-react',
     web: 'https://plantopia-react.vercel.app/',
-    description: '플랜토피아 블라블라',
+    description: '플랜토피아 블라블라\n플랜토피아 블라블라',
     skills: ['React', 'React'],
   },
   {

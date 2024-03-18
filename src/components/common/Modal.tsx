@@ -3,12 +3,12 @@ import { Children, Dispatch, SetStateAction } from 'react';
 import { createPortal } from 'react-dom';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
-import { SiIfixit } from 'react-icons/si';
+import { Navigation } from 'swiper/modules';
+import { SiGithub, SiIfixit } from 'react-icons/si';
+import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
 import { Project } from '@/types';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 export interface ModalProps {
   isOpen: boolean;
@@ -55,28 +55,56 @@ const ProjectModal = ({ setOpen, project }: ProjectModalProps) => {
         onClick={(e) => e.stopPropagation()}
       >
         <h2 className="text-4xl font-bold">{project.name}</h2>
+        <div>
+          <a
+            className="flex items-center gap-2 w-fit underline"
+            href={project.git}
+            target="_blank"
+          >
+            <SiGithub size={20} />
+            {project.git}
+          </a>
+          <a
+            className="flex items-center gap-2 w-fit mt-4 underline"
+            href={project.web}
+            target="_blank"
+          >
+            <FaArrowUpRightFromSquare size={20} />
+            {project.web}
+          </a>
+        </div>
         {project.images && (
           <Swiper
             className="w-full h-[30dvh]"
             spaceBetween={30}
             slidesPerView={3}
             navigation={true}
-            pagination={{ clickable: true }}
-            modules={[Navigation, Pagination]}
+            modules={[Navigation]}
           >
             {Children.toArray(
               project.images.map((image) => (
                 <SwiperSlide>
-                  <Image src={`/images/project/${image}`} fill alt="image" />
+                  <Image
+                    className="rounded-xl"
+                    src={`/images/project/${image}`}
+                    fill
+                    alt="image"
+                  />
                 </SwiperSlide>
               )),
             )}
           </Swiper>
         )}
-        {/* 배포링크 */}
-        {/* 레포지토리 */}
-        {/* 프로젝트소개 */}
-        {/* 기술스택 */}
+        <p className="whitespace-pre-wrap">{project.description}</p>
+        <ul className="flex gap-4">
+          {Children.toArray(
+            project.skills.map((skill) => (
+              <li className="py-1 px-2 rounded-md bg-indigo-500 text-white">
+                {skill}
+              </li>
+            )),
+          )}
+        </ul>
       </motion.main>
     </div>
   );
