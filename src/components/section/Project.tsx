@@ -1,28 +1,43 @@
 'use client';
 
+import Image from 'next/image';
 import { Children, useRef, useState } from 'react';
 import useRefObserver from '@/hooks/useRefObserver';
-import Image from 'next/image';
 import { Modal } from '../common/Modal';
+import { Project } from '@/types';
 
-const PROJECTS = [
+const PROJECTS: Project[] = [
   {
     name: 'Plantopia',
-    image: 'plantopia.png',
+    icon: 'plantopia.png',
+    images: ['image.png', 'image.png', 'image.png', 'image.png', 'image.png'],
+    git: 'https://github.com/thwlckd/plantopia-react',
+    web: 'https://plantopia-react.vercel.app/',
+    description: '플랜토피아 블라블라',
+    skills: ['React', 'React'],
   },
   {
     name: 'Fragrant',
-    image: 'fragrant.png',
+    icon: 'fragrant.png',
+    git: 'https://github.com/thwlckd/fragrant-nodejs',
+    web: 'https://plantopia-react.vercel.app/',
+    description: '프래그란트 블라블라',
+    skills: ['React', 'React'],
   },
   {
     name: 'Sfaclog',
-    image: 'sfaclog.png',
+    icon: 'sfaclog.png',
+    git: 'https://github.com/thwlckd/',
+    web: 'https://plantopia-react.vercel.app/',
+    description: '스팩로그 블라블라',
+    skills: ['React', 'React'],
   },
 ];
 
 export default function Project() {
   const projectRef = useRef(null);
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const [project, setProject] = useState<Project>();
 
   useRefObserver(projectRef);
 
@@ -34,14 +49,17 @@ export default function Project() {
         ref={projectRef}
       >
         {Children.toArray(
-          PROJECTS.map(({ name, image }) => (
+          PROJECTS.map(({ name, icon }, i) => (
             <a
               className="flex flex-col items-center gap-4 hover:-translate-y-2 duration-300"
-              onClick={() => setIsOpenModal((prev) => !prev)}
+              onClick={() => {
+                setIsOpenModal((prev) => !prev);
+                setProject(() => PROJECTS[i]);
+              }}
             >
               <Image
                 className="rounded-xl"
-                src={`/images/project/${image}`}
+                src={`/images/project/${icon}`}
                 width={128}
                 height={128}
                 alt={name}
@@ -51,9 +69,13 @@ export default function Project() {
           )),
         )}
       </section>
-      <Modal isOpen={isOpenModal} setOpen={setIsOpenModal}>
-        modal
-      </Modal>
+      {project && (
+        <Modal
+          isOpen={isOpenModal}
+          setOpen={setIsOpenModal}
+          project={project}
+        />
+      )}
     </>
   );
 }
