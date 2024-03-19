@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import useRefObserver from '@/hooks/useRefObserver';
+import { motion } from 'framer-motion';
 
 const emailRegEx = /^[a-z0-9]+@[a-z]+\.[a-z]{2,}$/;
 
@@ -51,14 +52,31 @@ export default function Contact() {
       className="flex flex-col items-center justify-center pr-[200px] min-h-screen"
       ref={contactRef}
     >
-      <p className="text-3xl font-bold">Have a question?</p>
-      <p className="mt-2 text-3xl font-bold">Want to work together?</p>
-      <form
+      <motion.p
+        className="text-3xl font-bold"
+        initial={{ x: '30dvw' }}
+        whileInView={{ x: 0 }}
+        transition={{ type: 'spring' }}
+      >
+        Have a question?
+      </motion.p>
+      <motion.p
+        className="mt-2 text-3xl font-bold"
+        initial={{ x: '-30dvw' }}
+        whileInView={{ x: 0 }}
+        transition={{ type: 'spring' }}
+      >
+        Want to work together?
+      </motion.p>
+      <motion.form
         className="flex flex-col gap-4 mt-10"
         onSubmit={(e) => {
           e.preventDefault();
           handleSubmitEmail();
         }}
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        transition={{ type: 'spring' }}
       >
         <input
           className="h-10 w-[500px] px-4 rounded-lg border focus:border-2 border-indigo-500"
@@ -78,7 +96,7 @@ export default function Contact() {
         <button className="py-2 text-lg text-white rounded-lg bg-indigo-500 hover:bg-indigo-400 active:bg-indigo-600 transition-colors">
           SUBMIT
         </button>
-      </form>
+      </motion.form>
     </section>
   );
 }
