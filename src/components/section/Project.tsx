@@ -52,9 +52,8 @@ export default function Project() {
         id="project"
         className="flex justify-center items-center flex-wrap gap-36 min-h-screen py-[20%] mr-20"
         ref={projectRef}
-        initial={{ opacity: 0.2, scaleX: 0.5 }}
-        whileInView={{ opacity: 1, scaleX: 1 }}
-        transition={{ type: 'spring' }}
+        initial={{ opacity: 0.2 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ amount: 0.5 }}
       >
         {Children.toArray(

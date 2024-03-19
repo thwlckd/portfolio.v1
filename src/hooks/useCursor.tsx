@@ -21,7 +21,7 @@ export default function useCursor() {
 
     const addMouseEventOnATag = () => {
       document
-        .querySelectorAll('a,.swiper-button-prev,.swiper-button-next')
+        .querySelectorAll('a,button,.swiper-button-prev,.swiper-button-next')
         .forEach((el) => {
           el.addEventListener('mouseover', enlargeCursor);
           el.addEventListener('mouseout', shrinkCursor);
