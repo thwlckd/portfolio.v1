@@ -3,8 +3,8 @@ import { Nunito } from 'next/font/google';
 import Provider from './provider';
 import { cn } from '@/utils';
 import Cursor from '@/components/common/Cursor';
-import Progressbar from '@/components/common/Progressbar';
-import Sidebar from '@/components/common/Sidebar';
+import Progressbar from '@/components/layout/Progressbar';
+import Sidebar from '@/components/layout/Sidebar';
 import Home from '@/components/section/Home';
 import './globals.css';
 

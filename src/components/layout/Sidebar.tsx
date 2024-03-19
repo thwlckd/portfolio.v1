@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Children } from 'react';
-import Chip from './Chip';
+import Chip from '../common/Chip';
 
 const SECTIONS = ['home', 'about', 'skill', 'project', 'contact'];
 
