@@ -10,7 +10,11 @@ interface ChipProps
 
 const ChipVariants = cva('flex items-center px-2 py-1', {
   variants: {
-    size: { medium: 'text-base rounded-md', large: 'text-lg rounded-lg' },
+    size: {
+      small: 'text-sm, rounded-md',
+      medium: 'text-base rounded-md',
+      large: 'text-lg rounded-lg',
+    },
     type: {
       fill: 'text-white bg-indigo-500',
       line: 'bg-white border border-indigo-500',

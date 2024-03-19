@@ -1,11 +1,15 @@
 'use client';
 
 import Image from 'next/image';
-import { Children, useRef, useState } from 'react';
+import { Children, HTMLAttributes, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 import useRefObserver from '@/hooks/useRefObserver';
 import { Modal } from '../common/Modal';
 import { Project } from '@/types';
-import { motion } from 'framer-motion';
+
+interface ProjectCardProps extends HTMLAttributes<HTMLDivElement> {
+  project: Partial<Project>;
+}
 
 const PROJECTS: Project[] = [
   {
@@ -48,28 +52,21 @@ export default function Project() {
         id="project"
         className="flex justify-center items-center flex-wrap gap-36 min-h-screen py-[20%] mr-20"
         ref={projectRef}
-        initial={{ opacity: 0.2, scale: 0.5 }}
-        whileInView={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0.2, scaleX: 0.5 }}
+        whileInView={{ opacity: 1, scaleX: 1 }}
         transition={{ type: 'spring' }}
         viewport={{ amount: 0.5 }}
       >
         {Children.toArray(
-          PROJECTS.map(({ name, icon }, i) => (
-            <a
-              className="flex flex-col items-center gap-4 hover:-translate-y-2 duration-300"
-              onClick={() => {
-                setIsOpenModal((prev) => !prev);
-                setProject(() => PROJECTS[i]);
-              }}
-            >
-              <Image
-                className="rounded-xl"
-                src={`/images/project/${icon}`}
-                width={128}
-                height={128}
-                alt={name}
+          PROJECTS.map((project, i) => (
+            <a>
+              <ProjectCard
+                project={project}
+                onClick={() => {
+                  setIsOpenModal((prev) => !prev);
+                  setProject(() => PROJECTS[i]);
+                }}
               />
-              <p className="text-lg font-bold">{name}</p>
             </a>
           )),
         )}
@@ -84,3 +81,21 @@ export default function Project() {
     </>
   );
 }
+
+const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
+  return (
+    <div className={`flex flex-col font-normal`} onClick={onClick}>
+      <div className="overflow-hidden rounded-xl">
+        <Image
+          className={`aspect-[4/3] hover:scale-110 transition-all`}
+          src={`/images/project/image.png`}
+          width={320}
+          height={240}
+          alt="thumbnail"
+        />
+      </div>
+      <h2 className="mt-3 text-lg font-bold">{project.name}</h2>
+      <p className="w-full mt-2 line-clamp-2">{project.description}</p>
+    </div>
+  );
+};
