@@ -28,6 +28,6 @@ export async function POST(req: Request) {
 
     return Response.json({ message: '메일 전송 완료' });
   } catch (error) {
-    return Response.json({ message: `메일 전송 실패` });
+    return Response.json({ message: `메일 전송 실패`, error });
   }
 }

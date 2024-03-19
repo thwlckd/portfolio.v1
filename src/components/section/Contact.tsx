@@ -3,6 +3,8 @@
 import { useRef } from 'react';
 import useRefObserver from '@/hooks/useRefObserver';
 
+const emailRegEx = /^[a-z0-9]+@[a-z]+\.[a-z]{2,}$/;
+
 export default function Contact() {
   const contactRef = useRef(null);
   const nameRef = useRef<HTMLInputElement>(null);
@@ -12,10 +14,18 @@ export default function Contact() {
   useRefObserver(contactRef);
 
   const handleSubmitEmail = async () => {
-    if (!nameRef.current || !emailRef.current || !messageRef.current) return;
+    if (
+      !nameRef.current?.value ||
+      !emailRef.current?.value ||
+      !messageRef.current?.value
+    )
+      return alert('공란이 없는지 확인해 주세요.');
+
+    if (!emailRegEx.test(emailRef.current.value))
+      return alert('이메일 형식을 확인해 주세요.');
 
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/mail`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/mail`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -26,8 +36,12 @@ export default function Contact() {
           message: messageRef.current.value,
         }),
       });
+
+      if (res.ok) return alert('메일 전송 완료!');
     } catch (error) {
       console.error('메일 전송 실패:', error);
+
+      return alert('메일 전송 실패!');
     }
   };
 
