@@ -7,9 +7,10 @@ import { Navigation } from 'swiper/modules';
 import { SiGithub, SiIfixit } from 'react-icons/si';
 import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
 import { Project } from '@/types';
+import Chip from './Chip';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import Chip from './Chip';
+import useCursor from '@/hooks/useCursor';
 
 export interface ModalProps {
   isOpen: boolean;
@@ -32,6 +33,8 @@ export const Modal = ({ isOpen, setOpen, project }: ModalProps) => {
 };
 
 const ProjectModal = ({ setOpen, project }: ProjectModalProps) => {
+  useCursor();
+
   return (
     <div
       className="absolute top-0 flex flex-col w-full h-full backdrop-blur-md z-10"
