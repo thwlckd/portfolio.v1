@@ -5,6 +5,7 @@ import { Children, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { GiMoebiusTriangle } from 'react-icons/gi';
 import useRefObserver from '@/hooks/useRefObserver';
+import Chip from '../common/Chip';
 
 export default function About() {
   const aboutRef = useRef(null);
@@ -42,6 +43,11 @@ const Profile = () => {
       </div>
       <p className="mt-8">박창협</p>
       <p>Front End Developer</p>
+      <div className="flex gap-2 mt-4">
+        <Chip>정보처리기사</Chip>
+        <Chip>SQLD</Chip>
+        <Chip>OPIC IH</Chip>
+      </div>
       <div className="flex flex-col gap-4 mt-12">
         <p>
           <GiMoebiusTriangle className="inline-block mr-2 hover:text-indigo-500 hover:animate-spin" />
@@ -65,7 +71,7 @@ const CAREERS = [
     title: '스팩스페이스',
     period: '2023.12 ~ 2024.02',
     description: [
-      '앱/웹 개발자 인턴형 프로그램',
+      '웹/앱 개발자 인턴형 프로그램',
       '스팩폴리오 프로젝트 최우수상',
     ],
   },

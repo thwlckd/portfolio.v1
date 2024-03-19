@@ -9,6 +9,7 @@ import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
 import { Project } from '@/types';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import Chip from './Chip';
 
 export interface ModalProps {
   isOpen: boolean;
@@ -99,8 +100,8 @@ const ProjectModal = ({ setOpen, project }: ProjectModalProps) => {
         <ul className="flex gap-4">
           {Children.toArray(
             project.skills.map((skill) => (
-              <li className="py-1 px-2 rounded-md bg-indigo-500 text-white">
-                {skill}
+              <li>
+                <Chip type="fill">{skill}</Chip>
               </li>
             )),
           )}

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Children } from 'react';
+import Chip from './Chip';
 
 const SECTIONS = ['home', 'about', 'skill', 'project', 'contact'];
 
@@ -16,12 +17,12 @@ export default function Sidebar() {
               }
               href={`#${section}`}
             ></Link>
-            <div
+            <Chip
               id={`${section}-tooltip`}
-              className="hidden absolute left-[30px] top-[-10px] p-2 bg-white rounded-lg border border-indigo-500 uppercase"
+              className="hidden absolute left-[30px] top-[-10px] p-2 uppercase"
             >
               {section}
-            </div>
+            </Chip>
           </li>
         )),
       )}
