@@ -7,3 +7,9 @@ export interface Project {
   description: string;
   skills: string[];
 }
+
+export interface EmailForm {
+  name: string;
+  email: string;
+  message: string;
+}

@@ -159,7 +159,7 @@ export default function Skill() {
       </nav>
       <motion.div
         className="grid grid-cols-5 gap-10"
-        initial={{ x: '200%' }}
+        initial={{ x: '50dvw' }}
         whileInView={{
           x: 0,
         }}
