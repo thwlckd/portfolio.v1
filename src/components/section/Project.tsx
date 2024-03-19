@@ -5,6 +5,7 @@ import { Children, useRef, useState } from 'react';
 import useRefObserver from '@/hooks/useRefObserver';
 import { Modal } from '../common/Modal';
 import { Project } from '@/types';
+import { motion } from 'framer-motion';
 
 const PROJECTS: Project[] = [
   {
@@ -43,10 +44,14 @@ export default function Project() {
 
   return (
     <>
-      <section
+      <motion.section
         id="project"
         className="flex justify-center items-center flex-wrap gap-36 min-h-screen py-[20%] mr-20"
         ref={projectRef}
+        initial={{ opacity: 0.2, scale: 0.5 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ type: 'spring' }}
+        viewport={{ amount: 0.5 }}
       >
         {Children.toArray(
           PROJECTS.map(({ name, icon }, i) => (
@@ -68,7 +73,7 @@ export default function Project() {
             </a>
           )),
         )}
-      </section>
+      </motion.section>
       {project && (
         <Modal
           isOpen={isOpenModal}
