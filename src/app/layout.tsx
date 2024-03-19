@@ -4,10 +4,11 @@ import Provider from './provider';
 import { cn } from '@/utils';
 import Cursor from '@/components/common/Cursor';
 import Progressbar from '@/components/layout/Progressbar';
-import Sidebar from '@/components/layout/Sidebar';
+import Navigator from '@/components/layout/Navigator';
+import Social from '@/components/layout/Social';
 import Home from '@/components/section/Home';
-import './globals.css';
 import Footer from '@/components/layout/Footer';
+import './globals.css';
 
 const font = Nunito({ subsets: ['latin'], display: 'swap' });
 
@@ -27,7 +28,8 @@ export default function RootLayout({
         <body className={cn(font.className, 'relative min-h-screen bg-white')}>
           <Cursor />
           <Progressbar />
-          <Sidebar />
+          <Navigator />
+          <Social />
           <Home />
           <main className="ml-[200px]">{children}</main>
           <Footer />

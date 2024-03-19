@@ -4,7 +4,7 @@ import Chip from '../common/Chip';
 
 const SECTIONS = ['home', 'about', 'skill', 'project', 'contact'];
 
-export default function Sidebar() {
+export default function Navigator() {
   return (
     <ul className="fixed top-0 left-10 flex flex-col justify-center items-center gap-10 w-10 h-screen z-10">
       {Children.toArray(
