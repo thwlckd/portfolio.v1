@@ -7,6 +7,7 @@ import Progressbar from '@/components/layout/Progressbar';
 import Sidebar from '@/components/layout/Sidebar';
 import Home from '@/components/section/Home';
 import './globals.css';
+import Footer from '@/components/layout/Footer';
 
 const font = Nunito({ subsets: ['latin'], display: 'swap' });
 
@@ -29,6 +30,7 @@ export default function RootLayout({
           <Sidebar />
           <Home />
           <main className="ml-[200px]">{children}</main>
+          <Footer />
           <div id="modal"></div>
         </body>
       </Provider>
