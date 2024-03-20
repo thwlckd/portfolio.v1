@@ -5,7 +5,7 @@ import { Children, HTMLAttributes, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import useRefObserver from '@/hooks/useRefObserver';
 import { Modal } from '../common/Modal';
-import { Project } from '@/types';
+import type { Project } from '@/types';
 
 interface ProjectCardProps extends HTMLAttributes<HTMLDivElement> {
   project: Partial<Project>;
