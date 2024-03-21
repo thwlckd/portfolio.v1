@@ -75,7 +75,7 @@ export default function Project() {
     <>
       <motion.section
         id="project"
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 content-center gap-10 min-h-screen pr-[50px] sm:pr-[100px] lg:pr-[200px]"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 content-center gap-10 min-h-screen pr-[50px] sm:pr-[100px] lg:pr-[200px] py-[100px]"
         ref={projectRef}
         initial={{ opacity: 0.2 }}
         whileInView={{ opacity: 1 }}

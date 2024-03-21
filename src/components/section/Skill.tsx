@@ -216,10 +216,10 @@ export default function Skill() {
   return (
     <section
       id="skill"
-      className="relative flex flex-col justify-center items-center min-h-screen pr-[50px] sm:pr-[100px] lg:pr-[200px]"
+      className="relative flex flex-col justify-center items-center min-h-screen pr-[50px] sm:pr-[100px] lg:pr-[200px] py-[100px]"
       ref={skillRef}
     >
-      <nav className="absolute top-[15%]">
+      <nav className="absolute top-[15dvh] z-10">
         <ul className="flex justify-center gap-10 sm:gap-20 text-xl sm:text-2xl font-bold">
           {Children.toArray(
             FIELD.map(({ field, name }) => (

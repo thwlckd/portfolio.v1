@@ -49,11 +49,11 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="flex flex-col items-center justify-center pr-[200px] min-h-screen"
+      className="flex flex-col items-center justify-center min-h-screen pr-[50px] sm:pr-[100px] lg:pr-[200px] py-[100px]"
       ref={contactRef}
     >
       <motion.p
-        className="text-3xl font-bold"
+        className="text-lg sm:text-2xl lg:text-3xl font-bold"
         initial={{ x: '30dvw' }}
         whileInView={{ x: 0 }}
         transition={{ type: 'spring' }}
@@ -61,7 +61,7 @@ export default function Contact() {
         Have a question?
       </motion.p>
       <motion.p
-        className="mt-2 text-3xl font-bold"
+        className="mt-2 text-lg sm:text-2xl lg:text-3xl font-bold"
         initial={{ x: '-30dvw' }}
         whileInView={{ x: 0 }}
         transition={{ type: 'spring' }}
@@ -79,17 +79,17 @@ export default function Contact() {
         transition={{ type: 'spring' }}
       >
         <input
-          className="h-10 w-[500px] px-4 rounded-lg border focus:border-2 border-indigo-500"
+          className="h-10 w-[280px] sm:w-[400px] lg:w-[500px] px-4 rounded-lg border focus:border-2 border-indigo-500"
           placeholder="Name"
           ref={nameRef}
         />
         <input
-          className="h-10 w-[500px] px-4 rounded-lg border focus:border-2 border-indigo-500"
+          className="h-10 w-[280px] sm:w-[400px] lg:w-[500px] px-4 rounded-lg border focus:border-2 border-indigo-500"
           placeholder="Email"
           ref={emailRef}
         />
         <textarea
-          className="h-40 w-[500px] px-4 py-2 rounded-lg border focus:border-2 border-indigo-500"
+          className="h-40 w-[280px] sm:w-[400px] lg:w-[500px] px-4 py-2 rounded-lg border focus:border-2 border-indigo-500"
           placeholder="Message"
           ref={messageRef}
         />
