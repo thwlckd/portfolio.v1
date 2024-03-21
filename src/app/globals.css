@@ -8,6 +8,16 @@
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(99, 102, 241);
+  border-radius: 10px;
+  height: 10%;
+}
+
 a,
 button {
   cursor: none;
