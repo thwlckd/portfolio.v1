@@ -47,7 +47,7 @@ const ProjectModal = ({ setOpen, project }: ProjectModalProps) => {
           y: 0,
         }}
       >
-        <SiIfixit className="w-full h-[50%] py-6 text-indigo-500" />
+        <SiIfixit className="w-full h-[50%] mt-[10dvh] lg:mt-0 py-6 text-indigo-500" />
       </motion.a>
       <motion.main
         className={
