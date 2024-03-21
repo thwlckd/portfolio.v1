@@ -15,7 +15,7 @@ export default function About() {
   return (
     <motion.section
       id="about"
-      className=" grid grid-flow-col grid-cols-2 min-h-screen  transition-all"
+      className="grid grid-cols-1 lg:grid-cols-2 gap-[50px] min-h-screen py-[100px] transition-all"
       ref={aboutRef}
       initial={{ opacity: 0.2 }}
       whileInView={{
@@ -31,7 +31,7 @@ export default function About() {
 
 const Profile = () => {
   return (
-    <article className="flex flex-col justify-center items-center text-lg">
+    <article className="flex flex-col justify-center items-center text-base lg:text-lg">
       <div className="overflow-hidden w-[200px] h-[200px] rounded-lg">
         <Image
           className="aspect-square object-cover hover:scale-110 transition-all"
@@ -44,9 +44,9 @@ const Profile = () => {
       <p className="mt-8">박창협</p>
       <p>Front End Developer</p>
       <div className="flex gap-2 mt-4">
-        <Chip>정보처리기사</Chip>
-        <Chip>SQLD</Chip>
-        <Chip>OPIC IH</Chip>
+        <Chip className="text-base lg:text-lg">정보처리기사</Chip>
+        <Chip className="text-base lg:text-lg">SQLD</Chip>
+        <Chip className="text-base lg:text-lg">OPIC IH</Chip>
       </div>
       <div className="flex flex-col gap-4 mt-12">
         <p>
@@ -94,18 +94,18 @@ const CAREERS = [
 
 const Career = () => {
   return (
-    <article className="flex flex-col justify-center ">
+    <article className="flex flex-col justify-center items-center lg:items-start">
       {Children.toArray(
         CAREERS.map(({ title, period, description }) => (
-          <div className="relative">
+          <div className="relative w-[300px] lg:w-auto">
             <div className="flex justify-center items-center w-fit h-16 bg-white">
-              <GiMoebiusTriangle className="inline-block text-3xl hover:text-indigo-500 hover:animate-spin" />
-              <p className="ml-4 text-2xl font-semibold">
+              <GiMoebiusTriangle className="inline-block text-xl lg:text-3xl hover:text-indigo-500 hover:animate-spin" />
+              <p className="ml-4 text-lg sm:text-xl lg:text-2xl font-semibold">
                 {title}
-                <span className="ml-2 text-sm">{period}</span>
+                <span className="ml-2 text-xs lg:text-sm">{period}</span>
               </p>
             </div>
-            <div className="flex flex-col gap-3 ml-12 mb-10 text-lg before:absolute before:left-3 before:w-[2px] before:h-full before:-z-10 before:bg-indigo-500">
+            <div className="flex flex-col gap-3 ml-12 mb-10 lg:text-lg before:absolute before:left-3 before:w-[2px] before:h-full before:-z-10 before:bg-indigo-500">
               {Children.toArray(description.map((v) => <p>{v}</p>))}
             </div>
           </div>
