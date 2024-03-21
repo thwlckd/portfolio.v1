@@ -26,7 +26,32 @@ const PROJECTS: Project[] = [
     icon: 'fragrant.png',
     git: 'https://github.com/thwlckd/fragrant-nodejs',
     web: 'https://plantopia-react.vercel.app/',
-    description: '프래그란트 블라블라',
+    description:
+      '프래그란트 블라블라프래그란트 블라블라프래그란트 블라블라프래그란트 블라블라프래그란트 블라블라프래그란트 블라블라프래그란트 블라블라프래그란트 블라블라프래그란트 블라블라프래그란트 블라블라프래그란트 블라블라프래그란트 블라블라프래그란트 블라블라프래그란트 블라블라프래그란트 블라블라프래그란트 블라블라프래그란트 블라블라프래그란트 블라블라프래그란트 블라블라프래그란트 블라블라',
+    skills: ['React', 'React'],
+  },
+  {
+    name: 'Sfaclog',
+    icon: 'sfaclog.png',
+    git: 'https://github.com/thwlckd/',
+    web: 'https://plantopia-react.vercel.app/',
+    description: '스팩로그 블라블라',
+    skills: ['React', 'React'],
+  },
+  {
+    name: 'Sfaclog',
+    icon: 'sfaclog.png',
+    git: 'https://github.com/thwlckd/',
+    web: 'https://plantopia-react.vercel.app/',
+    description: '스팩로그 블라블라',
+    skills: ['React', 'React'],
+  },
+  {
+    name: 'Sfaclog',
+    icon: 'sfaclog.png',
+    git: 'https://github.com/thwlckd/',
+    web: 'https://plantopia-react.vercel.app/',
+    description: '스팩로그 블라블라',
     skills: ['React', 'React'],
   },
   {
@@ -50,15 +75,15 @@ export default function Project() {
     <>
       <motion.section
         id="project"
-        className="flex justify-center items-center flex-wrap gap-36 min-h-screen py-[20%] mr-20"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 min-h-screen py-[20%] pr-[50px] sm:pr-[100px] lg:pr-[200px]"
         ref={projectRef}
         initial={{ opacity: 0.2 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ amount: 0.5 }}
+        viewport={{ amount: 0.2 }}
       >
         {Children.toArray(
           PROJECTS.map((project, i) => (
-            <a>
+            <a className="w-fit mx-auto">
               <ProjectCard
                 project={project}
                 onClick={() => {
@@ -83,10 +108,10 @@ export default function Project() {
 
 const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
   return (
-    <div className={`flex flex-col font-normal`} onClick={onClick}>
+    <div className="font-normal" onClick={onClick}>
       <div className="overflow-hidden rounded-xl">
         <Image
-          className={`aspect-[4/3] hover:scale-110 transition-all`}
+          className="aspect-[4/3] hover:scale-110 transition-all"
           src={`/images/project/image.png`}
           width={320}
           height={240}
@@ -94,7 +119,9 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
         />
       </div>
       <h2 className="mt-3 text-lg font-bold">{project.name}</h2>
-      <p className="w-full mt-2 line-clamp-2">{project.description}</p>
+      <p className="max-w-[250px] mt-2 line-clamp-1 whitespace-pre-wrap">
+        {project.description}
+      </p>
     </div>
   );
 };
