@@ -6,11 +6,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import { SiGithub, SiIfixit } from 'react-icons/si';
 import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
+import useCursor from '@/hooks/useCursor';
 import { Project } from '@/types';
 import Chip from './Chip';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import useCursor from '@/hooks/useCursor';
 
 export interface ModalProps {
   isOpen: boolean;
@@ -51,7 +51,7 @@ const ProjectModal = ({ setOpen, project }: ProjectModalProps) => {
       </motion.a>
       <motion.main
         className={
-          'sticky top-[10dvh] flex flex-col gap-[50px] w-full h-[90dvh] pt-[50px] px-[200px] bg-indigo-50 rounded-t-2xl overflow-y-scroll'
+          'sticky top-[10dvh] flex flex-col gap-[50px] w-full h-[90dvh] pt-[50px] px-[50px] lg:px-[200px] bg-indigo-50 rounded-t-2xl overflow-y-scroll'
         }
         initial={{ opacity: 0, y: '50%' }}
         animate={{ opacity: 1, y: 0 }}
@@ -80,10 +80,20 @@ const ProjectModal = ({ setOpen, project }: ProjectModalProps) => {
         {project.images && (
           <Swiper
             className="w-full h-[30dvh]"
-            spaceBetween={30}
-            slidesPerView={3}
+            slidesPerView={1}
+            spaceBetween={10}
             navigation={true}
             modules={[Navigation]}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              1200: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+            }}
           >
             {Children.toArray(
               project.images.map((image) => (
