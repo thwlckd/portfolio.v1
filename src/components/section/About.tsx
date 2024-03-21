@@ -15,13 +15,13 @@ export default function About() {
   return (
     <motion.section
       id="about"
-      className="grid grid-cols-1 lg:grid-cols-2 gap-[50px] min-h-screen py-[100px] transition-all"
+      className="grid grid-cols-1 lg:grid-cols-2 gap-[50px] min-h-screen py-[100px] pr-[50px] md:pr-0 transition-all"
       ref={aboutRef}
       initial={{ opacity: 0.2 }}
       whileInView={{
         opacity: 1,
       }}
-      viewport={{ amount: 0.5 }}
+      viewport={{ amount: 0.4 }}
     >
       <Profile />
       <Career />

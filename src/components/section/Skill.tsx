@@ -216,7 +216,7 @@ export default function Skill() {
   return (
     <section
       id="skill"
-      className="relative flex flex-col justify-center items-center min-h-screen mr-[50px] sm:mr-[100px] lg:mr-[200px]"
+      className="relative flex flex-col justify-center items-center min-h-screen pr-[50px] sm:pr-[100px] lg:pr-[200px]"
       ref={skillRef}
     >
       <nav className="absolute top-[15%]">

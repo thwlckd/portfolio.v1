@@ -27,13 +27,13 @@ export default function RootLayout({
       <Provider>
         <body className={cn(font.className, 'relative min-h-screen bg-white')}>
           <Cursor />
-          <Progressbar />
           <Navigator />
           <Social />
           <Home />
-          <main className="ml-[50px] sm:ml-[100px] lg:ml-[200px]">
+          <main className="pl-[50px] sm:pl-[100px] lg:pl-[200px] overflow-hidden">
             {children}
           </main>
+          <Progressbar />
           <Footer />
           <div id="modal"></div>
         </body>
