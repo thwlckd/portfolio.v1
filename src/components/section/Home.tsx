@@ -45,7 +45,7 @@ export default function Home() {
         <span>u</span>
         <span className="inline-block animate-bounce">b</span>
       </div>
-      <nav className="max-h-screen max-w-screen overflow-hidden text-[120px] sm:text-[200px] lg:text-[250px] break-all leading-none text-white font-bold uppercase">
+      <nav className="max-h-screen max-w-screen overflow-hidden text-[120px] sm:text-[200px] lg:text-[250px] break-all leading-none text-white font-bold uppercase text-center ">
         {Children.toArray(
           Array.from({ length: 3 }).map(() =>
             NAVIGATORS.map(({ name, color, hover }) => (

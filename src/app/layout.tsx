@@ -31,7 +31,9 @@ export default function RootLayout({
           <Navigator />
           <Social />
           <Home />
-          <main className="ml-[200px]">{children}</main>
+          <main className="ml-[50px] sm:ml-[100px] lg:ml-[200px]">
+            {children}
+          </main>
           <Footer />
           <div id="modal"></div>
         </body>

@@ -15,7 +15,7 @@ const SECTIONS = [
 
 export default function Social() {
   return (
-    <ul className="fixed top-0 right-10 flex flex-col justify-center items-center w-10 h-screen z-10">
+    <ul className="invisible sm:visible fixed top-0 right-10 flex flex-col justify-center items-center w-10 h-screen z-10">
       {Children.toArray(
         SECTIONS.map(({ icon, link }, i) => (
           <li
