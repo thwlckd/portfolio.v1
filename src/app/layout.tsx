@@ -13,8 +13,37 @@ import './globals.css';
 const font = Nunito({ subsets: ['latin'], display: 'swap' });
 
 export const metadata: Metadata = {
-  title: '프론트엔드 박창협 포트폴리오',
-  description: '프론트엔드 박창협 포트폴리오입니다.',
+  title: "Hyub's portfolio",
+  description: "Hi, I'm Hyub2.",
+  openGraph: {
+    title: "Hyub's portfolio",
+    description: "Hi, I'm Hyub2.",
+    url: 'https://hyub.xyz',
+    siteName: "Hyub's portfolio website",
+    images: [
+      {
+        url: 'https://hyub.xyz/og.jpeg',
+        width: 1080,
+        height: 540,
+        alt: '협',
+      },
+    ],
+    locale: 'ko_KR',
+    type: 'website',
+  },
+  robots: {
+    index: false,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: false,
+      noimageindex: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({
