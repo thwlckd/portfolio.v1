@@ -3,13 +3,19 @@
 import { Children, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import {
+  SiAmazonaws,
   SiCss3,
+  SiDocker,
   SiExpress,
+  SiFirebase,
   SiGit,
   SiHtml5,
   SiJavascript,
+  SiMongodb,
   SiNextdotjs,
   SiNodedotjs,
+  SiPassport,
+  SiPostman,
   SiReact,
   SiReactquery,
   SiRecoil,
@@ -177,6 +183,46 @@ const BACK = [
     backgroundColor: 'bg-gray-500',
     name: 'Express.js',
   },
+  {
+    icon: (
+      <SiPassport
+        className="text-[30px] sm:text-[40px] lg:text-[50px]"
+        color="white"
+      />
+    ),
+    backgroundColor: 'bg-black',
+    name: 'Passport.js',
+  },
+  {
+    icon: (
+      <SiMongodb
+        className="text-[30px] sm:text-[40px] lg:text-[50px]"
+        color="white"
+      />
+    ),
+    backgroundColor: 'bg-green-500',
+    name: 'MongoDB',
+  },
+  {
+    icon: (
+      <SiFirebase
+        className="text-[30px] sm:text-[40px] lg:text-[50px]"
+        color="white"
+      />
+    ),
+    backgroundColor: 'bg-amber-500',
+    name: 'Firebase',
+  },
+  {
+    icon: (
+      <SiPostman
+        className="text-[30px] sm:text-[40px] lg:text-[50px]"
+        color="white"
+      />
+    ),
+    backgroundColor: 'bg-orange-500',
+    name: 'Postman',
+  },
 ];
 
 const ETC = [
@@ -189,6 +235,26 @@ const ETC = [
     ),
     backgroundColor: 'bg-orange-600',
     name: 'Git',
+  },
+  {
+    icon: (
+      <SiAmazonaws
+        className="text-[30px] sm:text-[40px] lg:text-[50px]"
+        color="white"
+      />
+    ),
+    backgroundColor: 'bg-slate-800',
+    name: 'AWS',
+  },
+  {
+    icon: (
+      <SiDocker
+        className="text-[30px] sm:text-[40px] lg:text-[50px]"
+        color="white"
+      />
+    ),
+    backgroundColor: 'bg-blue-500',
+    name: 'Docker',
   },
 ];
 
