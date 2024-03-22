@@ -51,35 +51,37 @@ const ProjectModal = ({ setOpen, project }: ProjectModalProps) => {
       </motion.a>
       <motion.main
         className={
-          'sticky top-[10dvh] flex flex-col gap-[50px] w-full h-[90dvh] pt-[50px] px-[50px] lg:px-[200px] bg-indigo-50 rounded-t-2xl overflow-y-scroll'
+          'sticky top-[10dvh] flex flex-col gap-[50px] w-full h-[90dvh] py-[50px] px-[50px] lg:px-[200px] bg-indigo-50 rounded-t-2xl overflow-y-scroll'
         }
         initial={{ opacity: 0, y: '50%' }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: 'spring', damping: 15 }}
         onClick={(e) => e.stopPropagation()}
       >
-        <h2 className="text-4xl font-bold">{project.name}</h2>
-        <div>
+        <h2 className="text-2xl lg:text-4xl font-bold">{project.name}</h2>
+        <div className="text-nowrap">
           <a
-            className="flex items-center gap-2 w-fit underline"
+            className="flex items-center gap-2 underline line-clamp-1"
             href={project.git}
             target="_blank"
           >
-            <SiGithub size={20} />
+            <SiGithub className="min-w-5 min-h-5" />
             {project.git}
           </a>
-          <a
-            className="flex items-center gap-2 w-fit mt-4 underline"
-            href={project.web}
-            target="_blank"
-          >
-            <FaArrowUpRightFromSquare size={20} />
-            {project.web}
-          </a>
+          {project.web && (
+            <a
+              className="flex items-center gap-2 mt-4 underline line-clamp-1"
+              href={project.web}
+              target="_blank"
+            >
+              <FaArrowUpRightFromSquare className="min-w-5 min-h-5" />
+              {project.web}
+            </a>
+          )}
         </div>
         {project.images && (
           <Swiper
-            className="w-full h-[30dvh]"
+            className="w-full min-h-[30dvh]"
             slidesPerView={1}
             spaceBetween={10}
             navigation={true}
@@ -110,7 +112,7 @@ const ProjectModal = ({ setOpen, project }: ProjectModalProps) => {
           </Swiper>
         )}
         <p className="whitespace-pre-wrap">{project.description}</p>
-        <ul className="flex gap-4">
+        <ul className="flex flex-wrap gap-4">
           {Children.toArray(
             project.skills.map((skill) => (
               <li>

@@ -69,3 +69,7 @@ textarea {
 .swiper-button-next::after {
   @apply text-lg font-bold !important;
 }
+
+.swiper-button-disabled {
+  opacity: 0.2 !important;
+}

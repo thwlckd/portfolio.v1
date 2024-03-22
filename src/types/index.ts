@@ -1,9 +1,12 @@
 export interface Project {
   name: string;
-  icon: string;
+  thumbnail: string;
   images?: string[];
   git: string;
   web?: string;
+  account?: { id: string; password: string };
+  storybook?: string;
+  summary: string;
   description: string;
   skills: string[];
 }
