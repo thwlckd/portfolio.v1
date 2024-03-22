@@ -27,6 +27,7 @@ import {
   SiTypescript,
 } from 'react-icons/si';
 import useRefObserver from '@/hooks/useRefObserver';
+import useCursor from '@/hooks/useCursor';
 import { cn } from '@/utils';
 
 const FRONT = [
@@ -39,6 +40,7 @@ const FRONT = [
     ),
     backgroundColor: 'bg-orange-500',
     name: 'HTML5',
+    ability: 'after:content-["상"]',
   },
   {
     icon: (
@@ -49,6 +51,7 @@ const FRONT = [
     ),
     backgroundColor: 'bg-sky-500',
     name: 'CSS3',
+    ability: 'after:content-["상"]',
   },
   {
     icon: (
@@ -59,6 +62,7 @@ const FRONT = [
     ),
     backgroundColor: 'bg-yellow-500',
     name: 'JavaScript',
+    ability: 'after:content-["상"]',
   },
   {
     icon: (
@@ -69,6 +73,7 @@ const FRONT = [
     ),
     backgroundColor: 'bg-blue-500',
     name: 'TypeScript',
+    ability: 'after:content-["상"]',
   },
   {
     icon: (
@@ -79,6 +84,7 @@ const FRONT = [
     ),
     backgroundColor: 'bg-cyan-500',
     name: 'React',
+    ability: 'after:content-["상"]',
   },
   {
     icon: (
@@ -89,6 +95,7 @@ const FRONT = [
     ),
     backgroundColor: 'bg-black',
     name: 'Next.js',
+    ability: 'after:content-["상"]',
   },
   {
     icon: (
@@ -99,6 +106,7 @@ const FRONT = [
     ),
     backgroundColor: 'bg-pink-500',
     name: 'Sass',
+    ability: 'after:content-["상"]',
   },
   {
     icon: (
@@ -109,6 +117,7 @@ const FRONT = [
     ),
     backgroundColor: 'bg-fuchsia-500',
     name: 'Styled Components',
+    ability: 'after:content-["상"]',
   },
   {
     icon: (
@@ -119,6 +128,7 @@ const FRONT = [
     ),
     backgroundColor: 'bg-teal-500',
     name: 'Tailwind',
+    ability: 'after:content-["상"]',
   },
   {
     icon: (
@@ -129,6 +139,7 @@ const FRONT = [
     ),
     backgroundColor: 'bg-blue-500',
     name: 'Recoil',
+    ability: 'after:content-["상"]',
   },
   {
     icon: (
@@ -139,6 +150,7 @@ const FRONT = [
     ),
     backgroundColor: 'bg-violet-500',
     name: 'Redux Toolkit',
+    ability: 'after:content-["상"]',
   },
   {
     icon: (
@@ -149,6 +161,7 @@ const FRONT = [
     ),
     backgroundColor: 'bg-red-500',
     name: 'React Query',
+    ability: 'after:content-["상"]',
   },
   {
     icon: (
@@ -159,6 +172,7 @@ const FRONT = [
     ),
     backgroundColor: 'bg-pink-600',
     name: 'Storybook',
+    ability: 'after:content-["상"]',
   },
 ];
 
@@ -172,6 +186,7 @@ const BACK = [
     ),
     backgroundColor: 'bg-lime-500',
     name: 'Node.js',
+    ability: 'after:content-["상"]',
   },
   {
     icon: (
@@ -182,6 +197,7 @@ const BACK = [
     ),
     backgroundColor: 'bg-gray-500',
     name: 'Express.js',
+    ability: 'after:content-["상"]',
   },
   {
     icon: (
@@ -192,6 +208,7 @@ const BACK = [
     ),
     backgroundColor: 'bg-black',
     name: 'Passport.js',
+    ability: 'after:content-["상"]',
   },
   {
     icon: (
@@ -202,6 +219,7 @@ const BACK = [
     ),
     backgroundColor: 'bg-green-500',
     name: 'MongoDB',
+    ability: 'after:content-["상"]',
   },
   {
     icon: (
@@ -212,6 +230,7 @@ const BACK = [
     ),
     backgroundColor: 'bg-amber-500',
     name: 'Firebase',
+    ability: 'after:content-["상"]',
   },
   {
     icon: (
@@ -222,6 +241,7 @@ const BACK = [
     ),
     backgroundColor: 'bg-orange-500',
     name: 'Postman',
+    ability: 'after:content-["상"]',
   },
 ];
 
@@ -235,6 +255,7 @@ const ETC = [
     ),
     backgroundColor: 'bg-orange-600',
     name: 'Git',
+    ability: 'after:content-["상"]',
   },
   {
     icon: (
@@ -245,6 +266,7 @@ const ETC = [
     ),
     backgroundColor: 'bg-slate-800',
     name: 'AWS',
+    ability: 'after:content-["상"]',
   },
   {
     icon: (
@@ -255,6 +277,7 @@ const ETC = [
     ),
     backgroundColor: 'bg-blue-500',
     name: 'Docker',
+    ability: 'after:content-["상"]',
   },
 ];
 
@@ -262,14 +285,17 @@ const FIELD = [
   {
     field: FRONT,
     name: 'Front',
+    ability: 'after:content-["상"]',
   },
   {
     field: BACK,
     name: 'Back',
+    ability: 'after:content-["상"]',
   },
   {
     field: ETC,
     name: 'Etc',
+    ability: 'after:content-["상"]',
   },
 ];
 
@@ -278,6 +304,7 @@ export default function Skill() {
   const [category, setCategory] = useState(FRONT);
 
   useRefObserver(skillRef);
+  useCursor(category);
 
   return (
     <section
@@ -311,7 +338,7 @@ export default function Skill() {
         }}
         transition={{ type: 'spring' }}
       >
-        {category.map(({ icon, backgroundColor, name }) => (
+        {category.map(({ icon, backgroundColor, name, ability }) => (
           <motion.div
             className="flex flex-col items-center"
             key={name}
@@ -319,14 +346,16 @@ export default function Skill() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: 'spring' }}
           >
-            <div
+            <a
               className={cn(
                 'flex justify-center items-center w-[60px] h-[60px] sm:w-[70px] sm:h-[70px] lg:w-20 lg:h-20 rounded-full overflow-hidden hover:rotate-[360deg] transition-transform duration-1000',
                 backgroundColor,
+                'after:invisible hover:after:visible after:absolute after:flex after:justify-center after:items-center after:w-full after:h-full after:text-base after:sm:text-lg after:font-bold after:backdrop-blur-sm',
+                ability,
               )}
             >
               {icon}
-            </div>
+            </a>
             <p className="w-20 mt-2 text-sm sm:text-base text-center leading-tight">
               {name}
             </p>

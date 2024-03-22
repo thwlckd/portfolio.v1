@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-export default function useCursor() {
+export default function useCursor(dependency?: any) {
   return useEffect(() => {
     const cursor = document.getElementById('cursor') as HTMLDivElement;
 
@@ -33,5 +33,5 @@ export default function useCursor() {
     document.addEventListener('mouseup', shrinkCursor);
 
     addMouseEventOnATag();
-  }, []);
+  }, [dependency]);
 }
