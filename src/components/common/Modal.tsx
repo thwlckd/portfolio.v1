@@ -4,7 +4,7 @@ import { createPortal } from 'react-dom';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
-import { SiGithub, SiIfixit } from 'react-icons/si';
+import { SiGithub, SiIfixit, SiStorybook } from 'react-icons/si';
 import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
 import useCursor from '@/hooks/useCursor';
 import { Project } from '@/types';
@@ -61,22 +61,43 @@ const ProjectModal = ({ setOpen, project }: ProjectModalProps) => {
         <h2 className="text-2xl lg:text-4xl font-bold">{project.name}</h2>
         <div className="text-nowrap">
           <a
-            className="flex items-center gap-2 underline line-clamp-1"
+            className="flex items-center gap-2 w-fit max-w-full underline overflow-hidden"
             href={project.git}
             target="_blank"
           >
             <SiGithub className="min-w-5 min-h-5" />
             {project.git}
           </a>
+          {project.storybook && (
+            <>
+              <a
+                className="flex items-center gap-2 mt-4 w-fit max-w-full underline overflow-hidden"
+                href={project.storybook}
+                target="_blank"
+              >
+                <SiStorybook className="min-w-5 min-h-5" />
+                {project.storybook}
+              </a>
+            </>
+          )}
           {project.web && (
-            <a
-              className="flex items-center gap-2 mt-4 underline line-clamp-1"
-              href={project.web}
-              target="_blank"
-            >
-              <FaArrowUpRightFromSquare className="min-w-5 min-h-5" />
-              {project.web}
-            </a>
+            <>
+              <a
+                className="flex items-center gap-2 mt-4 w-fit max-w-full underline overflow-hidden"
+                href={project.web}
+                target="_blank"
+              >
+                <FaArrowUpRightFromSquare className="min-w-5 min-h-5" />
+                {project.web}
+              </a>
+              {project.account && (
+                <div className="ml-7 text-wrap">
+                  <span>[테스트 계정] </span>
+                  <span>id: {project.account.id} </span>
+                  <span>password: {project.account.password}</span>
+                </div>
+              )}
+            </>
           )}
         </div>
         {project.images && (
@@ -111,16 +132,36 @@ const ProjectModal = ({ setOpen, project }: ProjectModalProps) => {
             )}
           </Swiper>
         )}
-        <p className="whitespace-pre-wrap">{project.description}</p>
-        <ul className="flex flex-wrap gap-4">
-          {Children.toArray(
-            project.skills.map((skill) => (
-              <li>
-                <Chip type="fill">{skill}</Chip>
-              </li>
-            )),
+        <div>
+          <h3 className="text-lg lg:text-2xl font-bold">Introduce.</h3>
+          <p className="mt-4 whitespace-pre-wrap">{project.description}</p>
+        </div>
+        <div>
+          <h3 className="text-lg lg:text-2xl font-bold">Dev Log.</h3>
+          <p className="mt-4 whitespace-pre-wrap">{project.role}</p>
+        </div>
+        <div>
+          {project.tags && (
+            <ul className="flex flex-wrap gap-4 mb-4">
+              {Children.toArray(
+                project.tags.map((tag) => (
+                  <li>
+                    <Chip className="">#{tag}</Chip>
+                  </li>
+                )),
+              )}
+            </ul>
           )}
-        </ul>
+          <ul className="flex flex-wrap gap-4">
+            {Children.toArray(
+              project.skills.map((skill) => (
+                <li>
+                  <Chip type="fill">{skill}</Chip>
+                </li>
+              )),
+            )}
+          </ul>
+        </div>
       </motion.main>
     </div>
   );

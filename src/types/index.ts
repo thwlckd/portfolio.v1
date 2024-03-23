@@ -8,7 +8,9 @@ export interface Project {
   storybook?: string;
   summary: string;
   description: string;
+  role?: string;
   skills: string[];
+  tags?: string[];
 }
 
 export interface EmailForm {
