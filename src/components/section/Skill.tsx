@@ -4,23 +4,13 @@ import { Children, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import useRefObserver from '@/hooks/useRefObserver';
 import useCursor from '@/hooks/useCursor';
-import Chip from '../common/Chip';
 import { cn } from '@/utils';
 import { BACK, ETC, FRONT } from '@/constants/skill';
 
-const FIELD = [
-  {
-    field: FRONT,
-    name: 'Front',
-  },
-  {
-    field: BACK,
-    name: 'Back',
-  },
-  {
-    field: ETC,
-    name: 'Etc',
-  },
+const SKILLS = [
+  { field: FRONT, name: 'Front' },
+  { field: BACK, name: 'Back' },
+  { field: ETC, name: 'Etc' },
 ];
 
 export default function Skill() {
@@ -39,7 +29,7 @@ export default function Skill() {
       <nav className="absolute top-[15dvh] z-10">
         <ul className="flex justify-center gap-10 sm:gap-20 text-xl sm:text-2xl font-bold">
           {Children.toArray(
-            FIELD.map(({ field, name }) => (
+            SKILLS.map(({ field, name }) => (
               <li className="relative" onClick={() => setCategory(() => field)}>
                 <a
                   className={cn(
@@ -62,35 +52,55 @@ export default function Skill() {
         }}
         transition={{ type: 'spring' }}
       >
-        {category.map(
-          ({ icon, backgroundColor, name, ability, description }) => (
-            <motion.div
-              className="flex flex-col items-center"
-              key={name}
-              initial={{ opacity: 0, y: '200%' }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ type: 'spring' }}
-            >
-              <a
-                className={cn(
-                  'peer flex justify-center items-center w-[60px] h-[60px] sm:w-[70px] sm:h-[70px] lg:w-20 lg:h-20 rounded-full overflow-hidden hover:rotate-[360deg] transition-transform duration-1000',
-                  backgroundColor,
-                  'after:invisible hover:after:visible after:absolute after:flex after:justify-center after:items-center after:w-full after:h-full after:text-base after:sm:text-lg after:font-bold after:backdrop-blur-sm',
-                  ability,
-                )}
-              >
-                {icon}
-              </a>
-              <p className="w-20 mt-2 text-sm sm:text-base text-center leading-tight">
-                {name}
-              </p>
-              <Chip className="invisible peer-hover:visible absolute -top-10 text-sm sm:text-base text-nowrap opacity-20 peer-hover:opacity-100 transition-opacity">
-                {description}
-              </Chip>
-            </motion.div>
-          ),
-        )}
+        {category.map(({ icon, backgroundColor, name, ability }) => (
+          <SkillItem
+            key={name}
+            icon={icon}
+            backgroundColor={backgroundColor}
+            name={name}
+            ability={ability}
+          />
+        ))}
       </motion.div>
     </section>
   );
 }
+
+const SkillItem = ({
+  name,
+  backgroundColor,
+  ability,
+  icon,
+}: {
+  icon: JSX.Element;
+  backgroundColor: string;
+  name: string;
+  ability: string;
+}) => {
+  return (
+    <motion.div
+      className="flex flex-col items-center"
+      initial={{ opacity: 0, y: '200%' }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ type: 'spring' }}
+    >
+      <a
+        className={cn(
+          'peer flex justify-center items-center w-[60px] h-[60px] sm:w-[70px] sm:h-[70px] lg:w-20 lg:h-20 rounded-full overflow-hidden hover:rotate-[360deg] transition-transform duration-1000',
+          backgroundColor,
+          'after:invisible hover:after:visible after:absolute after:flex after:justify-center after:items-center after:w-full after:h-full after:text-base after:sm:text-lg after:font-bold after:backdrop-blur-sm',
+          ability,
+        )}
+      >
+        {icon}
+      </a>
+      <p className="w-20 mt-2 text-sm sm:text-base text-center leading-tight">
+        {name}
+      </p>
+      {/* 툴팁 보류
+  <Chip className="invisible peer-hover:visible absolute -top-10 text-sm sm:text-base text-nowrap opacity-20 peer-hover:opacity-100 transition-opacity">
+    {description}
+  </Chip> */}
+    </motion.div>
+  );
+};
