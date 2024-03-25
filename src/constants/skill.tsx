@@ -10,7 +10,6 @@ import {
   SiMongodb,
   SiNextdotjs,
   SiNodedotjs,
-  SiPassport,
   SiPostman,
   SiReact,
   SiRecoil,
@@ -33,7 +32,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-orange-500',
     name: 'HTML5',
-    ability: 'after:content-["상"]',
+    ability: 'after:content-["7"]',
     description: '설명 블라블라',
   },
   {
@@ -45,7 +44,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-sky-500',
     name: 'CSS3',
-    ability: 'after:content-["상"]',
+    ability: 'after:content-["7"]',
     description: '설명 블라블라',
   },
   {
@@ -57,7 +56,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-yellow-500',
     name: 'JavaScript',
-    ability: 'after:content-["상"]',
+    ability: 'after:content-["7"]',
     description: '설명 블라블라',
   },
   {
@@ -69,7 +68,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-blue-500',
     name: 'TypeScript',
-    ability: 'after:content-["상"]',
+    ability: 'after:content-["4"]',
     description: '설명 블라블라',
   },
   {
@@ -81,7 +80,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-cyan-500',
     name: 'React',
-    ability: 'after:content-["상"]',
+    ability: 'after:content-["6"]',
     description: '설명 블라블라',
   },
   {
@@ -93,7 +92,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-black',
     name: 'Next.js',
-    ability: 'after:content-["상"]',
+    ability: 'after:content-["4"]',
     description: '설명 블라블라',
   },
   {
@@ -105,7 +104,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-pink-500',
     name: 'Sass',
-    ability: 'after:content-["상"]',
+    ability: 'after:content-["7"]',
     description: '설명 블라블라',
   },
   {
@@ -117,7 +116,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-fuchsia-500',
     name: 'Styled Components',
-    ability: 'after:content-["상"]',
+    ability: 'after:content-["6"]',
     description: '설명 블라블라',
   },
   {
@@ -129,7 +128,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-teal-500',
     name: 'Tailwind',
-    ability: 'after:content-["상"]',
+    ability: 'after:content-["7"]',
     description: '설명 블라블라',
   },
   {
@@ -141,7 +140,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-blue-500',
     name: 'Recoil',
-    ability: 'after:content-["상"]',
+    ability: 'after:content-["4"]',
     description: '설명 블라블라',
   },
   {
@@ -153,7 +152,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-violet-500',
     name: 'Redux Toolkit',
-    ability: 'after:content-["상"]',
+    ability: 'after:content-["4"]',
     description: '설명 블라블라',
   },
   {
@@ -165,7 +164,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-red-500',
     name: 'React Query',
-    ability: 'after:content-["상"]',
+    ability: 'after:content-["5"]',
     description: '설명 블라블라',
   },
   {
@@ -177,7 +176,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-pink-600',
     name: 'Storybook',
-    ability: 'after:content-["상"]',
+    ability: 'after:content-["4"]',
     description: '설명 블라블라',
   },
 ];
@@ -192,7 +191,7 @@ export const BACK = [
     ),
     backgroundColor: 'bg-lime-500',
     name: 'Node.js',
-    ability: 'after:content-["상"]',
+    ability: 'after:content-["5"]',
     description: '설명 블라블라',
   },
   {
@@ -204,19 +203,7 @@ export const BACK = [
     ),
     backgroundColor: 'bg-gray-500',
     name: 'Express.js',
-    ability: 'after:content-["상"]',
-    description: '설명 블라블라',
-  },
-  {
-    icon: (
-      <SiPassport
-        className="text-[30px] sm:text-[40px] lg:text-[50px]"
-        color="white"
-      />
-    ),
-    backgroundColor: 'bg-black',
-    name: 'Passport.js',
-    ability: 'after:content-["상"]',
+    ability: 'after:content-["5"]',
     description: '설명 블라블라',
   },
   {
@@ -228,7 +215,7 @@ export const BACK = [
     ),
     backgroundColor: 'bg-green-500',
     name: 'MongoDB',
-    ability: 'after:content-["상"]',
+    ability: 'after:content-["3"]',
     description: '설명 블라블라',
   },
   {
@@ -240,7 +227,7 @@ export const BACK = [
     ),
     backgroundColor: 'bg-amber-500',
     name: 'Firebase',
-    ability: 'after:content-["상"]',
+    ability: 'after:content-["6"]',
     description: '설명 블라블라',
   },
   {
@@ -252,7 +239,7 @@ export const BACK = [
     ),
     backgroundColor: 'bg-orange-500',
     name: 'Postman',
-    ability: 'after:content-["상"]',
+    ability: 'after:content-["6"]',
     description: '설명 블라블라',
   },
 ];
@@ -267,7 +254,7 @@ export const ETC = [
     ),
     backgroundColor: 'bg-orange-600',
     name: 'Git',
-    ability: 'after:content-["상"]',
+    ability: 'after:content-["7"]',
     description: '설명 블라블라',
   },
   {
@@ -279,7 +266,7 @@ export const ETC = [
     ),
     backgroundColor: 'bg-slate-800',
     name: 'AWS',
-    ability: 'after:content-["상"]',
+    ability: 'after:content-["2"]',
     description: '설명 블라블라',
   },
   {
@@ -291,7 +278,7 @@ export const ETC = [
     ),
     backgroundColor: 'bg-blue-500',
     name: 'Docker',
-    ability: 'after:content-["상"]',
+    ability: 'after:content-["3"]',
     description: '설명 블라블라',
   },
 ];

@@ -50,6 +50,29 @@ const config: Config = {
       },
     },
   },
+  safelist: [
+    'text-[30px]',
+    'sm:text-[40px]',
+    'lg:text-[50px]',
+    'bg-black',
+    'bg-orange-600',
+    'bg-pink-600',
+    'bg-slate-800',
+    'after:content-["1"]',
+    'after:content-["2"]',
+    'after:content-["3"]',
+    'after:content-["4"]',
+    'after:content-["5"]',
+    'after:content-["6"]',
+    'after:content-["7"]',
+    'after:content-["8"]',
+    'after:content-["9"]',
+    'after:content-["10"]',
+    {
+      pattern:
+        /bg-(orange|sky|yellow|blue|cyan|pink|fuchsia|teal|violet|red|lime|gray|green|amber|slate)-500/,
+    },
+  ],
   plugins: [],
 };
 
