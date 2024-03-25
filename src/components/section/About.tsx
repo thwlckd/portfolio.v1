@@ -34,8 +34,8 @@ const Profile = () => {
     <article className="flex flex-col items-center justify-center text-base lg:text-lg">
       <div className="h-[200px] w-[200px] overflow-hidden rounded-lg">
         <Image
-          className="aspect-square object-cover transition-all hover:scale-110"
-          src="/images/profile.jpg"
+          className="aspect-square object-cover object-top transition-all hover:scale-110"
+          src="/images/profile.png"
           width={200}
           height={200}
           alt="profile"
