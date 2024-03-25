@@ -36,22 +36,22 @@ export default function Home() {
   return (
     <section
       id="home"
-      className="relative min-h-screen bg-white z-10"
+      className="relative z-10 min-h-screen bg-white"
       ref={homeRef}
     >
-      <div className="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] z-10 text-5xl sm:text-8xl lg:text-9xl font-extrabold sm:font-bold tracking-widest transition-colors">
+      <div className="absolute left-[50%] top-[50%] z-10 translate-x-[-50%] translate-y-[-50%] text-5xl font-extrabold tracking-widest transition-colors sm:text-8xl sm:font-bold lg:text-9xl">
         <span className="inline-block animate-spin-2">H</span>
         <span>y</span>
         <span>u</span>
         <span className="inline-block animate-bounce">b</span>
       </div>
-      <nav className="max-h-screen max-w-screen overflow-hidden text-[120px] sm:text-[200px] lg:text-[250px] break-all leading-none text-white font-bold uppercase text-center ">
+      <nav className="max-w-screen max-h-screen overflow-hidden break-all text-center text-[120px] font-bold uppercase leading-none text-white sm:text-[200px] lg:text-[250px] ">
         {Children.toArray(
           Array.from({ length: 3 }).map(() =>
             NAVIGATORS.map(({ name, color, hover }) => (
               <Link
                 className={cn(
-                  'transition-colors text-indigo-50 lg:text-indigo-50',
+                  'text-indigo-50 transition-colors lg:text-indigo-50',
                   color,
                   hover,
                 )}

@@ -49,11 +49,11 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="flex flex-col items-center justify-center min-h-screen pr-[50px] sm:pr-[100px] lg:pr-[200px] py-[100px]"
+      className="flex min-h-screen flex-col items-center justify-center py-[100px] pr-[50px] sm:pr-[100px] lg:pr-[200px]"
       ref={contactRef}
     >
       <motion.p
-        className="text-lg sm:text-2xl lg:text-3xl font-bold"
+        className="text-lg font-bold sm:text-2xl lg:text-3xl"
         initial={{ x: '30dvw' }}
         whileInView={{ x: 0 }}
         transition={{ type: 'spring' }}
@@ -61,7 +61,7 @@ export default function Contact() {
         Have a question?
       </motion.p>
       <motion.p
-        className="mt-2 text-lg sm:text-2xl lg:text-3xl font-bold"
+        className="mt-2 text-lg font-bold sm:text-2xl lg:text-3xl"
         initial={{ x: '-30dvw' }}
         whileInView={{ x: 0 }}
         transition={{ type: 'spring' }}
@@ -69,7 +69,7 @@ export default function Contact() {
         Want to work together?
       </motion.p>
       <motion.form
-        className="flex flex-col gap-4 mt-10"
+        className="mt-10 flex flex-col gap-4"
         onSubmit={(e) => {
           e.preventDefault();
           handleSubmitEmail();
@@ -79,21 +79,21 @@ export default function Contact() {
         transition={{ type: 'spring' }}
       >
         <input
-          className="h-10 w-[280px] sm:w-[400px] lg:w-[500px] px-4 rounded-lg border focus:border-2 border-indigo-500"
+          className="h-10 w-[280px] rounded-lg border border-indigo-500 px-4 focus:border-2 sm:w-[400px] lg:w-[500px]"
           placeholder="Name"
           ref={nameRef}
         />
         <input
-          className="h-10 w-[280px] sm:w-[400px] lg:w-[500px] px-4 rounded-lg border focus:border-2 border-indigo-500"
+          className="h-10 w-[280px] rounded-lg border border-indigo-500 px-4 focus:border-2 sm:w-[400px] lg:w-[500px]"
           placeholder="Email"
           ref={emailRef}
         />
         <textarea
-          className="h-40 w-[280px] sm:w-[400px] lg:w-[500px] px-4 py-2 rounded-lg border focus:border-2 border-indigo-500"
+          className="h-40 w-[280px] rounded-lg border border-indigo-500 px-4 py-2 focus:border-2 sm:w-[400px] lg:w-[500px]"
           placeholder="Message"
           ref={messageRef}
         />
-        <button className="py-2 text-lg text-white rounded-lg bg-indigo-500 hover:bg-indigo-400 active:bg-indigo-600 transition-colors">
+        <button className="rounded-lg bg-indigo-500 py-2 text-lg text-white transition-colors hover:bg-indigo-400 active:bg-indigo-600">
           SUBMIT
         </button>
       </motion.form>

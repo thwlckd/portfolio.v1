@@ -7,7 +7,7 @@ export default function Progressbar() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 origin-left h-2 w-screen z-50 bg-gradient-to-r from-indigo-200 to-indigo-700 rounded-r-full"
+      className="fixed left-0 top-0 z-50 h-2 w-screen origin-left rounded-r-full bg-gradient-to-r from-indigo-200 to-indigo-700"
       style={{ scaleX: scrollYProgress }}
     ></motion.div>
   );

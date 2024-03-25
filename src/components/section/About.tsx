@@ -15,7 +15,7 @@ export default function About() {
   return (
     <motion.section
       id="about"
-      className="grid grid-cols-1 lg:grid-cols-2 gap-[50px] min-h-screen py-[100px] pr-[50px] md:pr-0 transition-all"
+      className="grid min-h-screen grid-cols-1 gap-[50px] py-[100px] pr-[50px] transition-all md:pr-0 lg:grid-cols-2"
       ref={aboutRef}
       initial={{ opacity: 0.2 }}
       whileInView={{
@@ -31,10 +31,10 @@ export default function About() {
 
 const Profile = () => {
   return (
-    <article className="flex flex-col justify-center items-center text-base lg:text-lg">
-      <div className="overflow-hidden w-[200px] h-[200px] rounded-lg">
+    <article className="flex flex-col items-center justify-center text-base lg:text-lg">
+      <div className="h-[200px] w-[200px] overflow-hidden rounded-lg">
         <Image
-          className="aspect-square object-cover hover:scale-110 transition-all"
+          className="aspect-square object-cover transition-all hover:scale-110"
           src="/images/profile.jpg"
           width={200}
           height={200}
@@ -43,22 +43,22 @@ const Profile = () => {
       </div>
       <p className="mt-8">박창협</p>
       <p>Front End Developer</p>
-      <div className="flex gap-2 mt-4">
+      <div className="mt-4 flex gap-2">
         <Chip className="text-base lg:text-lg">정보처리기사</Chip>
         <Chip className="text-base lg:text-lg">SQLD</Chip>
         <Chip className="text-base lg:text-lg">OPIC IH</Chip>
       </div>
-      <div className="flex flex-col gap-4 mt-12">
+      <div className="mt-12 flex flex-col gap-4">
         <p>
-          <GiMoebiusTriangle className="inline-block mr-2 hover:text-indigo-500 hover:animate-spin" />
+          <GiMoebiusTriangle className="mr-2 inline-block hover:animate-spin hover:text-indigo-500" />
           소프트웨어로 가까이 있는 문제를 해결하는데 관심이 있습니다.
         </p>
         <p>
-          <GiMoebiusTriangle className="inline-block mr-2 hover:text-indigo-500 hover:animate-spin" />
+          <GiMoebiusTriangle className="mr-2 inline-block hover:animate-spin hover:text-indigo-500" />
           개발자 경험을 향상시키기 위한 고민을 합니다.
         </p>
         <p>
-          <GiMoebiusTriangle className="inline-block mr-2 hover:text-indigo-500 hover:animate-spin" />
+          <GiMoebiusTriangle className="mr-2 inline-block hover:animate-spin hover:text-indigo-500" />
           같이의 가치를 중요하게 생각합니다.
         </p>
       </div>
@@ -94,18 +94,18 @@ const CAREERS = [
 
 const Career = () => {
   return (
-    <article className="flex flex-col justify-center items-center lg:items-start">
+    <article className="flex flex-col items-center justify-center lg:items-start">
       {Children.toArray(
         CAREERS.map(({ title, period, description }) => (
           <div className="relative w-[300px] lg:w-auto">
-            <div className="flex justify-center items-center w-fit h-16 bg-white">
-              <GiMoebiusTriangle className="inline-block text-xl lg:text-3xl hover:text-indigo-500 hover:animate-spin" />
-              <p className="ml-4 text-lg sm:text-xl lg:text-2xl font-semibold">
+            <div className="flex h-16 w-fit items-center justify-center bg-white">
+              <GiMoebiusTriangle className="inline-block text-xl hover:animate-spin hover:text-indigo-500 lg:text-3xl" />
+              <p className="ml-4 text-lg font-semibold sm:text-xl lg:text-2xl">
                 {title}
                 <span className="ml-2 text-xs lg:text-sm">{period}</span>
               </p>
             </div>
-            <div className="flex flex-col gap-3 ml-12 mb-10 lg:text-lg before:absolute before:left-3 before:w-[2px] before:h-full before:-z-10 before:bg-indigo-500">
+            <div className="mb-10 ml-12 flex flex-col gap-3 before:absolute before:left-3 before:-z-10 before:h-full before:w-[2px] before:bg-indigo-500 lg:text-lg">
               {Children.toArray(description.map((v) => <p>{v}</p>))}
             </div>
           </div>

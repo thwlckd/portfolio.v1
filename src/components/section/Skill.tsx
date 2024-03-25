@@ -23,11 +23,11 @@ export default function Skill() {
   return (
     <section
       id="skill"
-      className="relative flex flex-col justify-center items-center min-h-screen pr-[50px] sm:pr-[100px] lg:pr-[200px] py-[100px]"
+      className="relative flex min-h-screen flex-col items-center justify-center py-[100px] pr-[50px] sm:pr-[100px] lg:pr-[200px]"
       ref={skillRef}
     >
       <nav className="absolute top-[15dvh] z-10">
-        <ul className="flex justify-center gap-10 sm:gap-20 text-xl sm:text-2xl font-bold">
+        <ul className="flex justify-center gap-10 text-xl font-bold sm:gap-20 sm:text-2xl">
           {Children.toArray(
             SKILLS.map(({ field, name }) => (
               <li className="relative" onClick={() => setCategory(() => field)}>
@@ -45,7 +45,7 @@ export default function Skill() {
         </ul>
       </nav>
       <motion.div
-        className="grid grid-cols-4 lg:grid-cols-5 gap-5 sm:gap-10"
+        className="grid grid-cols-4 gap-5 sm:gap-10 lg:grid-cols-5"
         initial={{ x: '50dvw' }}
         whileInView={{
           x: 0,
@@ -86,15 +86,15 @@ const SkillItem = ({
     >
       <a
         className={cn(
-          'peer flex justify-center items-center w-[60px] h-[60px] sm:w-[70px] sm:h-[70px] lg:w-20 lg:h-20 rounded-full overflow-hidden hover:rotate-[360deg] transition-transform duration-1000',
+          'peer flex h-[60px] w-[60px] items-center justify-center overflow-hidden rounded-full transition-transform duration-1000 hover:rotate-[360deg] sm:h-[70px] sm:w-[70px] lg:h-20 lg:w-20',
           backgroundColor,
-          'after:invisible hover:after:visible after:absolute after:flex after:justify-center after:items-center after:w-full after:h-full after:text-base after:sm:text-lg after:font-bold after:backdrop-blur-sm',
+          'after:invisible after:absolute after:flex after:h-full after:w-full after:items-center after:justify-center after:text-base after:font-bold after:backdrop-blur-sm hover:after:visible after:sm:text-lg',
           ability,
         )}
       >
         {icon}
       </a>
-      <p className="w-20 mt-2 text-sm sm:text-base text-center leading-tight">
+      <p className="mt-2 w-20 text-center text-sm leading-tight sm:text-base">
         {name}
       </p>
       {/* 툴팁 보류

@@ -15,12 +15,12 @@ const SECTIONS = [
 
 export default function Social() {
   return (
-    <ul className="invisible sm:visible fixed top-0 right-10 flex flex-col justify-center items-center w-10 h-screen z-10">
+    <ul className="invisible fixed right-10 top-0 z-10 flex h-screen w-10 flex-col items-center justify-center sm:visible">
       {Children.toArray(
         SECTIONS.map(({ icon, link }, i) => (
           <li
             className={cn(
-              'px-2 pb-5 mb-5',
+              'mb-5 px-2 pb-5',
               SECTIONS.length - 1 !== i && ['border-b-[1px] border-indigo-500'],
             )}
           >

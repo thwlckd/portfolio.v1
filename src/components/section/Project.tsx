@@ -23,7 +23,7 @@ export default function Project() {
     <>
       <motion.section
         id="project"
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 content-center gap-10 min-h-screen pr-[50px] sm:pr-[100px] lg:pr-[200px] py-[100px]"
+        className="grid min-h-screen grid-cols-1 content-center gap-10 py-[100px] pr-[50px] sm:pr-[100px] md:grid-cols-2 lg:grid-cols-3 lg:pr-[200px]"
         ref={projectRef}
         initial={{ opacity: 0.2 }}
         whileInView={{ opacity: 1 }}
@@ -31,7 +31,7 @@ export default function Project() {
       >
         {Children.toArray(
           PROJECTS.map((project, i) => (
-            <a className="w-fit mx-auto">
+            <a className="mx-auto w-fit">
               <ProjectCard
                 project={project}
                 onClick={() => {
@@ -63,7 +63,7 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
     >
       <div className="overflow-hidden rounded-xl shadow-md">
         <Image
-          className="aspect-[4/3] hover:scale-110 transition-all"
+          className="aspect-[4/3] transition-all hover:scale-110"
           src={`/images/project/${project.thumbnail}`}
           width={320}
           height={240}
@@ -71,7 +71,7 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
         />
       </div>
       <h2 className="mt-3 text-lg font-bold">{project.name}</h2>
-      <p className="max-w-[250px] mt-2 line-clamp-1 whitespace-pre-wrap">
+      <p className="mt-2 line-clamp-1 max-w-[250px] whitespace-pre-wrap">
         {project.summary}
       </p>
     </motion.div>

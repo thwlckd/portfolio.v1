@@ -37,45 +37,45 @@ const ProjectModal = ({ setOpen, project }: ProjectModalProps) => {
 
   return (
     <div
-      className="absolute top-0 flex flex-col w-full h-full backdrop-blur-md z-10"
+      className="absolute top-0 z-10 flex h-full w-full flex-col backdrop-blur-md"
       onClick={() => setOpen((prev) => !prev)}
     >
       <motion.a
-        className="sticky top-0 w-full h-[20dvh]"
+        className="sticky top-0 h-[20dvh] w-full"
         initial={{ y: '-50%' }}
         whileHover={{
           y: 0,
         }}
       >
-        <SiIfixit className="w-full h-[50%] mt-[10dvh] lg:mt-0 py-6 text-indigo-500" />
+        <SiIfixit className="mt-[10dvh] h-[50%] w-full py-6 text-indigo-500 lg:mt-0" />
       </motion.a>
       <motion.main
         className={
-          'sticky top-[10dvh] flex flex-col gap-[50px] w-full h-[90dvh] py-[50px] px-[50px] lg:px-[200px] bg-indigo-50 rounded-t-2xl overflow-y-scroll'
+          'sticky top-[10dvh] flex h-[90dvh] w-full flex-col gap-[50px] overflow-y-scroll rounded-t-2xl bg-indigo-50 px-[50px] py-[50px] lg:px-[200px]'
         }
         initial={{ opacity: 0, y: '50%' }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: 'spring', damping: 15 }}
         onClick={(e) => e.stopPropagation()}
       >
-        <h2 className="text-2xl lg:text-4xl font-bold">{project.name}</h2>
+        <h2 className="text-2xl font-bold lg:text-4xl">{project.name}</h2>
         <div className="text-nowrap">
           <a
-            className="flex items-center gap-2 w-fit max-w-full underline overflow-hidden"
+            className="flex w-fit max-w-full items-center gap-2 overflow-hidden underline"
             href={project.git}
             target="_blank"
           >
-            <SiGithub className="min-w-5 min-h-5" />
+            <SiGithub className="min-h-5 min-w-5" />
             {project.git}
           </a>
           {project.storybook && (
             <>
               <a
-                className="flex items-center gap-2 mt-4 w-fit max-w-full underline overflow-hidden"
+                className="mt-4 flex w-fit max-w-full items-center gap-2 overflow-hidden underline"
                 href={project.storybook}
                 target="_blank"
               >
-                <SiStorybook className="min-w-5 min-h-5" />
+                <SiStorybook className="min-h-5 min-w-5" />
                 {project.storybook}
               </a>
             </>
@@ -83,11 +83,11 @@ const ProjectModal = ({ setOpen, project }: ProjectModalProps) => {
           {project.web && (
             <>
               <a
-                className="flex items-center gap-2 mt-4 w-fit max-w-full underline overflow-hidden"
+                className="mt-4 flex w-fit max-w-full items-center gap-2 overflow-hidden underline"
                 href={project.web}
                 target="_blank"
               >
-                <FaArrowUpRightFromSquare className="min-w-5 min-h-5" />
+                <FaArrowUpRightFromSquare className="min-h-5 min-w-5" />
                 {project.web}
               </a>
               {project.account && (
@@ -102,7 +102,7 @@ const ProjectModal = ({ setOpen, project }: ProjectModalProps) => {
         </div>
         {project.images && (
           <Swiper
-            className="w-full min-h-[30dvh]"
+            className="min-h-[30dvh] w-full"
             slidesPerView={1}
             spaceBetween={10}
             navigation={true}
@@ -133,16 +133,16 @@ const ProjectModal = ({ setOpen, project }: ProjectModalProps) => {
           </Swiper>
         )}
         <div>
-          <h3 className="text-lg lg:text-2xl font-bold">Introduce.</h3>
+          <h3 className="text-lg font-bold lg:text-2xl">Introduce.</h3>
           <p className="mt-4 whitespace-pre-wrap">{project.description}</p>
         </div>
         <div>
-          <h3 className="text-lg lg:text-2xl font-bold">Dev Log.</h3>
+          <h3 className="text-lg font-bold lg:text-2xl">Dev Log.</h3>
           <p className="mt-4 whitespace-pre-wrap">{project.role}</p>
         </div>
         <div>
           {project.tags && (
-            <ul className="flex flex-wrap gap-4 mb-4">
+            <ul className="mb-4 flex flex-wrap gap-4">
               {Children.toArray(
                 project.tags.map((tag) => (
                   <li>

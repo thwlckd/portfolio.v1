@@ -59,7 +59,7 @@ export default function RootLayout({
           <Navigator />
           <Social />
           <Home />
-          <main className="pl-[50px] sm:pl-[100px] lg:pl-[200px] overflow-hidden">
+          <main className="overflow-hidden pl-[50px] sm:pl-[100px] lg:pl-[200px]">
             {children}
           </main>
           <Progressbar />

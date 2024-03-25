@@ -8,7 +8,7 @@ export default function Cursor() {
   return (
     <div
       id="cursor"
-      className="fixed left-[-20px] w-4 h-4 rounded-full translate-x-[-50%] translate-y-[-50%] z-50 bg-white mix-blend-difference pointer-events-none transition-[width,height]"
+      className="pointer-events-none fixed left-[-20px] z-50 h-4 w-4 translate-x-[-50%] translate-y-[-50%] rounded-full bg-white mix-blend-difference transition-[width,height]"
     ></div>
   );
 }
