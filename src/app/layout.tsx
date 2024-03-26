@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Nunito } from 'next/font/google';
 import Provider from './provider';
 import { cn } from '@/utils';
-import Cursor from '@/components/common/Cursor';
+import Cursor from '@/components/layout/Cursor';
 import Progressbar from '@/components/layout/Progressbar';
 import Navigator from '@/components/layout/Navigator';
 import Social from '@/components/layout/Social';
