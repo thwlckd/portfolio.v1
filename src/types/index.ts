@@ -1,5 +1,6 @@
 export interface Project {
   name: string;
+  period: string;
   thumbnail: string;
   images?: string[];
   git: string;

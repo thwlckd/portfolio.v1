@@ -3,6 +3,7 @@ import { Project } from '@/types';
 const PROJECTS: Project[] = [
   {
     name: 'Plantopia',
+    period: '23.08 ~ 23.08 (3주)',
     thumbnail: 'plantopia1.png',
     images: [
       'plantopia1.png',
@@ -48,6 +49,7 @@ React Query를 도입하여 컴포넌트 내부의 view/data layer를 구분하�
   },
   {
     name: 'Fragrant',
+    period: '23.07 ~ 23.07 (2주)',
     thumbnail: 'fragrant1.png',
     images: [
       'fragrant1.png',
@@ -89,6 +91,7 @@ Nodemailer를 이용해 이메일 인증 기능을 개발했습니다.
   },
   {
     name: 'Sfaclog',
+    period: '24.01 ~ 24.02 (5주)',
     thumbnail: 'sfaclog1.png',
     images: [
       'sfaclog1.png',
@@ -133,6 +136,7 @@ Error Boundary를 적용하여 런타임의 에러 상황을 대비했습니다.
   },
   {
     name: '모바일 주차 요금 정산 서비스',
+    period: '22.03 ~ 22.06',
     thumbnail: 'parking-app1.png',
     images: [
       'parking-app1.png',

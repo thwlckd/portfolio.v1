@@ -58,7 +58,10 @@ const ProjectModal = ({ setOpen, project }: ProjectModalProps) => {
         transition={{ type: 'spring', damping: 15 }}
         onClick={(e) => e.stopPropagation()}
       >
-        <h2 className="text-2xl font-bold lg:text-4xl">{project.name}</h2>
+        <h2 className="text-2xl font-bold lg:text-4xl">
+          {project.name}
+          <p className="ml-4 inline text-xs lg:text-base">{project.period}</p>
+        </h2>
         <div className="text-nowrap">
           <a
             className="flex w-fit max-w-full items-center gap-2 overflow-hidden underline"
