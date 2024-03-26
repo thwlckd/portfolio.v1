@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { GiMoebiusTriangle } from 'react-icons/gi';
 import useRefObserver from '@/hooks/useRefObserver';
 import Chip from '../common/Chip';
+import profile from '@/../public/images/profile.png';
 
 export default function About() {
   const aboutRef = useRef(null);
@@ -35,10 +36,11 @@ const Profile = () => {
       <div className="h-[200px] w-[200px] overflow-hidden rounded-lg">
         <Image
           className="aspect-square object-cover object-top transition-all hover:scale-110"
-          src="/images/profile.png"
+          src={profile}
           width={200}
           height={200}
           alt="profile"
+          placeholder="blur"
         />
       </div>
       <p className="mt-8">박창협</p>

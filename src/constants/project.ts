@@ -1,19 +1,43 @@
 import { Project } from '@/types';
+import plantopia1 from '@/../public/images/project/plantopia1.png';
+import plantopia2 from '@/../public/images/project/plantopia2.png';
+import plantopia3 from '@/../public/images/project/plantopia3.png';
+import plantopia4 from '@/../public/images/project/plantopia4.png';
+import plantopia5 from '@/../public/images/project/plantopia5.png';
+import plantopia6 from '@/../public/images/project/plantopia6.png';
+import plantopia7 from '@/../public/images/project/plantopia7.png';
+import plantopia8 from '@/../public/images/project/plantopia8.png';
+import fragrant1 from '@/../public/images/project/fragrant1.png';
+import fragrant2 from '@/../public/images/project/fragrant2.png';
+import fragrant3 from '@/../public/images/project/fragrant3.png';
+import fragrant4 from '@/../public/images/project/fragrant4.png';
+import fragrant5 from '@/../public/images/project/fragrant5.png';
+import sfaclog1 from '@/../public/images/project/sfaclog1.png';
+import sfaclog2 from '@/../public/images/project/sfaclog2.png';
+import sfaclog3 from '@/../public/images/project/sfaclog3.png';
+import sfaclog4 from '@/../public/images/project/sfaclog4.png';
+import sfaclog5 from '@/../public/images/project/sfaclog5.png';
+import sfaclog6 from '@/../public/images/project/sfaclog6.png';
+import parking1 from '@/../public/images/project/parking-app1.png';
+import parking2 from '@/../public/images/project/parking-app2.png';
+import parking3 from '@/../public/images/project/parking-app3.png';
+import parking4 from '@/../public/images/project/parking-app4.png';
+import parking5 from '@/../public/images/project/parking-app5.png';
 
 const PROJECTS: Project[] = [
   {
     name: 'Plantopia',
     period: '23.08 ~ 23.08 (3주)',
-    thumbnail: 'plantopia1.png',
+    thumbnail: plantopia1,
     images: [
-      'plantopia1.png',
-      'plantopia2.png',
-      'plantopia3.png',
-      'plantopia4.png',
-      'plantopia5.png',
-      'plantopia6.png',
-      'plantopia7.png',
-      'plantopia8.png',
+      plantopia1,
+      plantopia2,
+      plantopia3,
+      plantopia4,
+      plantopia5,
+      plantopia6,
+      plantopia7,
+      plantopia8,
     ],
     git: 'https://github.com/thwlckd/plantopia-react',
     web: 'https://plantopia-react.vercel.app',
@@ -50,14 +74,8 @@ React Query를 도입하여 컴포넌트 내부의 view/data layer를 구분하�
   {
     name: 'Fragrant',
     period: '23.07 ~ 23.07 (2주)',
-    thumbnail: 'fragrant1.png',
-    images: [
-      'fragrant1.png',
-      'fragrant2.png',
-      'fragrant3.png',
-      'fragrant4.png',
-      'fragrant5.png',
-    ],
+    thumbnail: fragrant1,
+    images: [fragrant1, fragrant2, fragrant3, fragrant4, fragrant5],
     git: 'https://github.com/thwlckd/fragrant-nodejs',
     summary: '향수 온라인 쇼핑몰 🛍️',
     description: `향수를 쉽게 구매 및 판매할 수 있는 온라인 쇼핑몰입니다.\n
@@ -92,15 +110,8 @@ Nodemailer를 이용해 이메일 인증 기능을 개발했습니다.
   {
     name: 'Sfaclog',
     period: '24.01 ~ 24.02 (5주)',
-    thumbnail: 'sfaclog1.png',
-    images: [
-      'sfaclog1.png',
-      'sfaclog2.png',
-      'sfaclog3.png',
-      'sfaclog4.png',
-      'sfaclog5.png',
-      'sfaclog6.png',
-    ],
+    thumbnail: sfaclog1,
+    images: [sfaclog1, sfaclog2, sfaclog3, sfaclog4, sfaclog5, sfaclog6],
     git: 'https://github.com/SFACLOG/sfaclog',
     web: 'https://sfaclog-web.vercel.app',
     account: { id: 'imsi@google.com', password: '123456789!' },
@@ -137,14 +148,8 @@ Error Boundary를 적용하여 런타임의 에러 상황을 대비했습니다.
   {
     name: '모바일 주차 요금 정산 서비스',
     period: '22.03 ~ 22.06',
-    thumbnail: 'parking-app1.png',
-    images: [
-      'parking-app1.png',
-      'parking-app2.png',
-      'parking-app3.png',
-      'parking-app4.png',
-      'parking-app5.png',
-    ],
+    thumbnail: parking2,
+    images: [parking1, parking2, parking3, parking4, parking5],
     git: 'https://github.com/thwlckd/MobileParkingPayment-Python-App',
     summary: '입출차 연동 주차 요금 사전 결제 앱 🚗',
     description: `출차 전 모바일 앱을 이용하여 간편하게 주차 요금을 사전 결제하는 서비스입니다.

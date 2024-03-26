@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { Children, HTMLAttributes, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import useRefObserver from '@/hooks/useRefObserver';
@@ -64,10 +64,11 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
       <div className="overflow-hidden rounded-xl shadow-md">
         <Image
           className="aspect-[4/3] transition-all hover:scale-110"
-          src={`/images/project/${project.thumbnail}`}
+          src={project.thumbnail as StaticImageData}
           width={320}
           height={240}
           alt="thumbnail"
+          placeholder="blur"
         />
       </div>
       <h2 className="mt-3 text-lg font-bold">{project.name}</h2>

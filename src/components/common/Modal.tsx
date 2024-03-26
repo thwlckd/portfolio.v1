@@ -126,9 +126,10 @@ const ProjectModal = ({ setOpen, project }: ProjectModalProps) => {
                 <SwiperSlide>
                   <Image
                     className="rounded-xl"
-                    src={`/images/project/${image}`}
+                    src={image}
                     fill
                     alt="image"
+                    placeholder="blur"
                   />
                 </SwiperSlide>
               )),
