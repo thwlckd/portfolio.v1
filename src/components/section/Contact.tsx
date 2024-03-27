@@ -99,6 +99,7 @@ export default function Contact() {
           ref={messageRef}
         />
         <button
+          type="button"
           className={cn(
             'rounded-lg bg-indigo-500 py-2 text-lg text-white transition-colors hover:bg-indigo-400 active:bg-indigo-600',
             isPendingEmail && 'cursor-progress',
