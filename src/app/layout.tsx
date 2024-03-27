@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Nunito } from 'next/font/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import Provider from './provider';
 import { cn } from '@/utils';
 import Cursor from '@/components/layout/Cursor';
@@ -67,6 +68,7 @@ export default function RootLayout({
           <div id="modal"></div>
         </body>
       </Provider>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID as string} />
     </html>
   );
 }
