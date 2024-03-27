@@ -1,8 +1,9 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import useRefObserver from '@/hooks/useRefObserver';
 import { motion } from 'framer-motion';
+import { cn } from '@/utils';
 
 const emailRegEx = /^[a-z0-9]+@[a-z]+\.[a-z]{2,}$/;
 
@@ -11,10 +12,13 @@ export default function Contact() {
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const messageRef = useRef<HTMLTextAreaElement>(null);
+  const [isPendingEmail, setIsPendingEmail] = useState(false);
 
   useRefObserver(contactRef);
 
-  const handleSubmitEmail = async () => {
+  const handleClickSubmit = async () => {
+    if (isPendingEmail) return;
+
     if (
       !nameRef.current?.value ||
       !emailRef.current?.value ||
@@ -26,6 +30,8 @@ export default function Contact() {
       return alert('이메일 형식을 확인해 주세요.');
 
     try {
+      setIsPendingEmail(true);
+
       const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/mail`, {
         method: 'POST',
         headers: {
@@ -43,6 +49,8 @@ export default function Contact() {
       console.error('메일 전송 실패:', error);
 
       return alert('메일 전송 실패!');
+    } finally {
+      setIsPendingEmail(false);
     }
   };
 
@@ -70,10 +78,7 @@ export default function Contact() {
       </motion.p>
       <motion.form
         className="mt-10 flex flex-col gap-4"
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleSubmitEmail();
-        }}
+        onSubmit={(e) => e.preventDefault()}
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
         transition={{ type: 'spring' }}
@@ -93,7 +98,13 @@ export default function Contact() {
           placeholder="Message"
           ref={messageRef}
         />
-        <button className="rounded-lg bg-indigo-500 py-2 text-lg text-white transition-colors hover:bg-indigo-400 active:bg-indigo-600">
+        <button
+          className={cn(
+            'rounded-lg bg-indigo-500 py-2 text-lg text-white transition-colors hover:bg-indigo-400 active:bg-indigo-600',
+            isPendingEmail && 'cursor-progress',
+          )}
+          onClick={handleClickSubmit}
+        >
           SUBMIT
         </button>
       </motion.form>
