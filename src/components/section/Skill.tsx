@@ -44,12 +44,12 @@ export default function Skill() {
               </li>
             )),
           )}
-          <a className="group absolute -right-10 top-[50%] -translate-y-1/2 sm:-right-14 lg:-right-[120px]">
+          <div className="group absolute -right-10 top-[50%] -translate-y-1/2 sm:-right-14 lg:-right-[120px]">
             <AiOutlineQuestionCircle className="text-base sm:text-lg" />
-            <Chip className="invisible absolute -top-20 right-0 whitespace-pre-wrap text-nowrap text-start text-xs font-normal opacity-20 transition-opacity group-hover:visible group-hover:opacity-100 sm:text-sm">
-              {`1~3: 스닛펫을 참고하여 프로젝트에 사용\n4~6: 동작 메커니즘의 이해를 기반으로 프로젝트에 사용\n7~9: 능숙하게 프로젝트에 사용`}
+            <Chip className="invisible absolute -top-16 right-0 whitespace-pre-wrap text-nowrap text-start text-xs font-normal opacity-20 transition-opacity group-hover:visible group-hover:opacity-100 sm:text-sm">
+              {`프로젝트에 적용할 수 있는 스킬입니다.\n현재 관심사는 인디고 색으로 표현했습니다.`}
             </Chip>
-          </a>
+          </div>
         </ul>
       </nav>
       <motion.div
@@ -60,13 +60,13 @@ export default function Skill() {
         }}
         transition={{ type: 'spring' }}
       >
-        {category.map(({ icon, backgroundColor, name, ability }) => (
+        {category.map(({ icon, backgroundColor, name, interest }) => (
           <SkillItem
             key={name}
             icon={icon}
             backgroundColor={backgroundColor}
             name={name}
-            ability={ability}
+            interest={interest}
           />
         ))}
       </motion.div>
@@ -77,13 +77,13 @@ export default function Skill() {
 const SkillItem = ({
   name,
   backgroundColor,
-  ability,
+  interest,
   icon,
 }: {
   icon: JSX.Element;
   backgroundColor: string;
   name: string;
-  ability: string;
+  interest: boolean;
 }) => {
   return (
     <motion.div
@@ -92,23 +92,25 @@ const SkillItem = ({
       animate={{ opacity: 1, y: 0 }}
       transition={{ type: 'spring' }}
     >
-      <a
+      <div
         className={cn(
           'peer flex h-[60px] w-[60px] items-center justify-center overflow-hidden rounded-full transition-transform duration-1000 hover:rotate-[360deg] sm:h-[70px] sm:w-[70px] lg:h-20 lg:w-20',
           backgroundColor,
-          'after:invisible after:absolute after:flex after:h-full after:w-full after:items-center after:justify-center after:text-base after:font-bold after:backdrop-blur-sm hover:after:visible after:sm:text-lg',
-          ability,
+          // 스택 수치화 보류
+          // 'after:invisible after:absolute after:flex after:h-full after:w-full after:items-center after:justify-center after:text-base after:font-bold after:backdrop-blur-sm hover:after:visible after:sm:text-lg',
+          // ability,
         )}
       >
         {icon}
-      </a>
-      <p className="mt-2 w-20 text-center text-sm leading-tight sm:text-base">
+      </div>
+      <p
+        className={cn(
+          'mt-2 w-20 text-center text-sm leading-tight sm:text-base',
+          interest && ['font-bold text-indigo-500'],
+        )}
+      >
         {name}
       </p>
-      {/* 툴팁 보류
-  <Chip className="invisible peer-hover:visible absolute -top-10 text-sm sm:text-base text-nowrap opacity-20 peer-hover:opacity-100 transition-opacity">
-    {description}
-  </Chip> */}
     </motion.div>
   );
 };

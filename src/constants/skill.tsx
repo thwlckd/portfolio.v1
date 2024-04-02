@@ -1,7 +1,6 @@
 import {
   SiAmazonaws,
   SiCss3,
-  SiDocker,
   SiExpress,
   SiFirebase,
   SiGit,
@@ -20,6 +19,7 @@ import {
   SiStyledcomponents,
   SiTailwindcss,
   SiTypescript,
+  SiGithubactions,
 } from 'react-icons/si';
 
 export const FRONT = [
@@ -32,8 +32,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-orange-500',
     name: 'HTML5',
-    ability: 'after:content-["7"]',
-    description: '설명 블라블라',
+    interest: false,
   },
   {
     icon: (
@@ -44,8 +43,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-sky-500',
     name: 'CSS3',
-    ability: 'after:content-["7"]',
-    description: '설명 블라블라',
+    interest: false,
   },
   {
     icon: (
@@ -56,8 +54,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-yellow-500',
     name: 'JavaScript',
-    ability: 'after:content-["7"]',
-    description: '설명 블라블라',
+    interest: true,
   },
   {
     icon: (
@@ -68,8 +65,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-blue-500',
     name: 'TypeScript',
-    ability: 'after:content-["4"]',
-    description: '설명 블라블라',
+    interest: true,
   },
   {
     icon: (
@@ -80,8 +76,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-cyan-500',
     name: 'React',
-    ability: 'after:content-["6"]',
-    description: '설명 블라블라',
+    interest: true,
   },
   {
     icon: (
@@ -92,8 +87,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-black',
     name: 'Next.js',
-    ability: 'after:content-["4"]',
-    description: '설명 블라블라',
+    interest: true,
   },
   {
     icon: (
@@ -104,8 +98,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-pink-500',
     name: 'Sass',
-    ability: 'after:content-["7"]',
-    description: '설명 블라블라',
+    interest: false,
   },
   {
     icon: (
@@ -116,8 +109,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-fuchsia-500',
     name: 'Styled Components',
-    ability: 'after:content-["6"]',
-    description: '설명 블라블라',
+    interest: false,
   },
   {
     icon: (
@@ -128,8 +120,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-teal-500',
     name: 'Tailwind',
-    ability: 'after:content-["7"]',
-    description: '설명 블라블라',
+    interest: true,
   },
   {
     icon: (
@@ -140,8 +131,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-blue-500',
     name: 'Recoil',
-    ability: 'after:content-["4"]',
-    description: '설명 블라블라',
+    interest: false,
   },
   {
     icon: (
@@ -152,8 +142,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-violet-500',
     name: 'Redux Toolkit',
-    ability: 'after:content-["4"]',
-    description: '설명 블라블라',
+    interest: false,
   },
   {
     icon: (
@@ -164,8 +153,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-red-500',
     name: 'React Query',
-    ability: 'after:content-["5"]',
-    description: '설명 블라블라',
+    interest: true,
   },
   {
     icon: (
@@ -176,8 +164,7 @@ export const FRONT = [
     ),
     backgroundColor: 'bg-pink-600',
     name: 'Storybook',
-    ability: 'after:content-["4"]',
-    description: '설명 블라블라',
+    interest: false,
   },
 ];
 
@@ -191,8 +178,7 @@ export const BACK = [
     ),
     backgroundColor: 'bg-lime-500',
     name: 'Node.js',
-    ability: 'after:content-["5"]',
-    description: '설명 블라블라',
+    interest: false,
   },
   {
     icon: (
@@ -203,8 +189,7 @@ export const BACK = [
     ),
     backgroundColor: 'bg-gray-500',
     name: 'Express.js',
-    ability: 'after:content-["5"]',
-    description: '설명 블라블라',
+    interest: false,
   },
   {
     icon: (
@@ -215,8 +200,7 @@ export const BACK = [
     ),
     backgroundColor: 'bg-green-500',
     name: 'MongoDB',
-    ability: 'after:content-["3"]',
-    description: '설명 블라블라',
+    interest: false,
   },
   {
     icon: (
@@ -227,8 +211,7 @@ export const BACK = [
     ),
     backgroundColor: 'bg-amber-500',
     name: 'Firebase',
-    ability: 'after:content-["6"]',
-    description: '설명 블라블라',
+    interest: false,
   },
   {
     icon: (
@@ -239,8 +222,7 @@ export const BACK = [
     ),
     backgroundColor: 'bg-orange-500',
     name: 'Postman',
-    ability: 'after:content-["6"]',
-    description: '설명 블라블라',
+    interest: false,
   },
 ];
 
@@ -254,8 +236,18 @@ export const ETC = [
     ),
     backgroundColor: 'bg-orange-600',
     name: 'Git',
-    ability: 'after:content-["7"]',
-    description: '설명 블라블라',
+    interest: false,
+  },
+  {
+    icon: (
+      <SiGithubactions
+        className="text-[30px] sm:text-[40px] lg:text-[50px]"
+        color="white"
+      />
+    ),
+    backgroundColor: 'bg-blue-500',
+    name: 'Github Actions',
+    interest: true,
   },
   {
     icon: (
@@ -266,19 +258,6 @@ export const ETC = [
     ),
     backgroundColor: 'bg-slate-800',
     name: 'AWS',
-    ability: 'after:content-["2"]',
-    description: '설명 블라블라',
-  },
-  {
-    icon: (
-      <SiDocker
-        className="text-[30px] sm:text-[40px] lg:text-[50px]"
-        color="white"
-      />
-    ),
-    backgroundColor: 'bg-blue-500',
-    name: 'Docker',
-    ability: 'after:content-["3"]',
-    description: '설명 블라블라',
+    interest: false,
   },
 ];
