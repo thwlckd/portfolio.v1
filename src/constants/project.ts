@@ -1,4 +1,10 @@
 import { Project } from '@/types';
+
+import portfolio1 from '@/../public/images/project/portfolio1.png';
+import portfolio2 from '@/../public/images/project/portfolio2.png';
+import portfolio3 from '@/../public/images/project/portfolio3.png';
+import portfolio4 from '@/../public/images/project/portfolio4.png';
+import portfolio5 from '@/../public/images/project/portfolio5.png';
 import plantopia1 from '@/../public/images/project/plantopia1.png';
 import plantopia2 from '@/../public/images/project/plantopia2.png';
 import plantopia3 from '@/../public/images/project/plantopia3.png';
@@ -25,6 +31,34 @@ import parking4 from '@/../public/images/project/parking-app4.png';
 import parking5 from '@/../public/images/project/parking-app5.png';
 
 const PROJECTS: Project[] = [
+  {
+    name: 'Portfolio',
+    period: '24.03 ~',
+    thumbnail: portfolio1,
+    images: [portfolio1, portfolio2, portfolio3, portfolio4, portfolio5],
+    git: 'https://github.com/thwlckd/portfolio',
+    web: 'https://hyub.xyz',
+    summary: '개인 포트폴리오 사이트 🎨',
+    description: `개발자 박창협을 소개하는 개인 포트폴리오 프로젝트입니다.\n
+프론트엔드 개발자로서 스스로를 더 잘 표현하기 위해 만들게 되었습니다.\n
+버그 및 변동 사항에 대해 지속적으로 업데이트할 예정입니다.`,
+    role: `사이트 방문자에게 인터랙티브한 경험을 제공하기 위한 고민을 했습니다.
+커서 커스텀으로 배경색에 대비되는 커서 효과를 부여해 사용자의 액션에 생동감을 부여했습니다.
+Framer Motion을 이용해 각 섹션의 inView/outView 상태를 동적으로 표현했습니다.\n
+Github Actions를 이용한 AWS EC2 CI/CD workflow를 구축했습니다.
+EC2 ssh 접속 → git pull → npm build → pm2 restart 순서로 반복되는 작업의 자동화 필요성을 느꼈습니다.
+원격 ssh 명령어를 수행하기 위해 ssh-action를 사용하여 자동화 스크립트를 작성하였습니다.\n
+배포 후 해당 포트폴리오 사이트의 일일 방문자 수가 궁금해졌고, Google Analytics를 적용했습니다.
+GA4 콘솔을 이용해 방문자 통계를 수집하고, 페이지 내 행동을 트래킹 할 수 있게 되었습니다.`,
+    skills: [
+      'Next.js',
+      'Typescript',
+      'Tailwind',
+      'Framer Motion',
+      'Github Actions',
+    ],
+    tags: ['개인 프로젝트', '포트폴리오', '프론트엔드'],
+  },
   {
     name: 'Plantopia',
     period: '23.08 ~ 23.08 (3주)',
