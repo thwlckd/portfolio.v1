@@ -53,15 +53,15 @@ const Profile = () => {
       <div className="mt-12 flex flex-col gap-4">
         <p>
           <GiMoebiusTriangle className="mr-2 inline-block hover:animate-spin hover:text-indigo-500" />
-          소프트웨어로 가까이 있는 문제를 해결하는데 관심이 있습니다.
+          사회의 니즈를 소프트웨어로 풀어내는데 관심이 있습니다.
         </p>
         <p>
           <GiMoebiusTriangle className="mr-2 inline-block hover:animate-spin hover:text-indigo-500" />
-          개발자 경험을 향상시키기 위한 고민을 합니다.
+          지속 가능한 코드를 지향합니다.
         </p>
         <p>
           <GiMoebiusTriangle className="mr-2 inline-block hover:animate-spin hover:text-indigo-500" />
-          같이의 가치를 중요하게 생각합니다.
+          맹점을 경계합니다.
         </p>
       </div>
     </article>
@@ -84,7 +84,6 @@ const CAREERS = [
       '정보통신공학과 졸업',
       '객체지향프로그래밍및자료구조 튜터',
       'IT 동아리 HowTo 활동',
-      '성적 장학금 5회',
     ],
   },
   {
