@@ -71,10 +71,8 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
           placeholder="blur"
         />
       </div>
-      <h2 className="mt-3 text-lg font-bold">{project.name}</h2>
-      <p className="mt-2 line-clamp-1 max-w-[250px] whitespace-pre-wrap">
-        {project.summary}
-      </p>
+      <h2 className="mt-3 line-clamp-1 text-lg font-bold">{project.name}</h2>
+      <p className="mt-2 line-clamp-1 max-w-[320px]">{project.summary}</p>
     </motion.div>
   );
 };
