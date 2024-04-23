@@ -60,33 +60,37 @@ const ProjectModal = ({ setOpen, project }: ProjectModalProps) => {
       >
         <h2 className="text-2xl font-bold lg:text-4xl">
           {project.name}
-          <p className="ml-4 inline text-xs lg:text-base">{project.period}</p>
+          {project.period && (
+            <p className="ml-4 inline text-xs lg:text-base">{project.period}</p>
+          )}
         </h2>
         <div className="text-nowrap">
-          <a
-            className="flex w-fit max-w-full items-center gap-2 overflow-hidden underline"
-            href={project.git}
-            target="_blank"
-          >
-            <SiGithub className="min-h-5 min-w-5" />
-            {project.git}
-          </a>
-          {project.storybook && (
-            <>
+          {Children.toArray(
+            project.git.map((src) => (
               <a
-                className="mt-4 flex w-fit max-w-full items-center gap-2 overflow-hidden underline"
-                href={project.storybook}
+                className="mb-4 flex w-fit max-w-full items-center gap-2 overflow-hidden underline"
+                href={src}
                 target="_blank"
               >
-                <SiStorybook className="min-h-5 min-w-5" />
-                {project.storybook}
+                <SiGithub className="min-h-5 min-w-5" />
+                {src}
               </a>
-            </>
+            )),
+          )}
+          {project.storybook && (
+            <a
+              className="mb-4 flex w-fit max-w-full items-center gap-2 overflow-hidden underline"
+              href={project.storybook}
+              target="_blank"
+            >
+              <SiStorybook className="min-h-5 min-w-5" />
+              {project.storybook}
+            </a>
           )}
           {project.web && (
             <>
               <a
-                className="mt-4 flex w-fit max-w-full items-center gap-2 overflow-hidden underline"
+                className="flex w-fit max-w-full items-center gap-2 overflow-hidden underline"
                 href={project.web}
                 target="_blank"
               >
