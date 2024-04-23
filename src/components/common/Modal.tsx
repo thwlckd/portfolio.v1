@@ -55,6 +55,7 @@ const ProjectModal = ({ setOpen, project }: ProjectModalProps) => {
         }
         initial={{ opacity: 0, y: '50%' }}
         animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: '50%', transition: { duration: 0.2 } }}
         transition={{ type: 'spring', damping: 15 }}
         onClick={(e) => e.stopPropagation()}
       >

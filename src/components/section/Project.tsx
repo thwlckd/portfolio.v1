@@ -2,7 +2,7 @@
 
 import Image, { StaticImageData } from 'next/image';
 import { Children, HTMLAttributes, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import useRefObserver from '@/hooks/useRefObserver';
 import { Modal } from '../common/Modal';
 import type { Project } from '@/types';
@@ -43,13 +43,15 @@ export default function Project() {
           )),
         )}
       </motion.section>
-      {project && (
-        <Modal
-          isOpen={isOpenModal}
-          setOpen={setIsOpenModal}
-          project={project}
-        />
-      )}
+      <AnimatePresence>
+        {isOpenModal && project && (
+          <Modal
+            isOpen={isOpenModal}
+            setOpen={setIsOpenModal}
+            project={project}
+          />
+        )}
+      </AnimatePresence>
     </>
   );
 }
