@@ -5,7 +5,7 @@ export interface Project {
   period: string;
   thumbnail: StaticImageData;
   images?: StaticImageData[];
-  git: string;
+  git: string[];
   web?: string;
   account?: { id: string; password: string };
   storybook?: string;
