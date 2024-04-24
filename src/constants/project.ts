@@ -29,6 +29,11 @@ import parking2 from '@/../public/images/project/parking-app2.png';
 import parking3 from '@/../public/images/project/parking-app3.png';
 import parking4 from '@/../public/images/project/parking-app4.png';
 import parking5 from '@/../public/images/project/parking-app5.png';
+import todo1 from '@/../public/images/project/todo1.png';
+import todo2 from '@/../public/images/project/todo2.png';
+import todo3 from '@/../public/images/project/todo3.png';
+import todo4 from '@/../public/images/project/todo4.png';
+import todo5 from '@/../public/images/project/todo5.png';
 
 const PROJECTS: Project[] = [
   {
@@ -36,7 +41,7 @@ const PROJECTS: Project[] = [
     period: '24.03 ~',
     thumbnail: portfolio1,
     images: [portfolio1, portfolio2, portfolio3, portfolio4, portfolio5],
-    git: 'https://github.com/thwlckd/portfolio',
+    git: ['https://github.com/thwlckd/portfolio'],
     web: 'https://hyub.xyz',
     summary: '개인 포트폴리오 사이트 🎨',
     description: `개발자 박창협을 소개하는 개인 포트폴리오 프로젝트입니다.\n
@@ -47,7 +52,7 @@ const PROJECTS: Project[] = [
 Framer Motion을 이용해 각 섹션의 inView/outView 상태를 동적으로 표현했습니다.\n
 Github Actions를 이용한 AWS EC2 CI/CD workflow를 구축했습니다.
 EC2 ssh 접속 → git pull → npm build → pm2 restart 순서로 반복되는 작업의 자동화 필요성을 느꼈습니다.
-원격 ssh 명령어를 수행하기 위해 ssh-action를 사용하여 자동화 스크립트를 작성하였습니다.\n
+원격 ssh 명령어를 수행하기 위해 ssh-action을 사용하여 자동화 스크립트를 작성하였습니다.\n
 배포 후 해당 포트폴리오 사이트의 일일 방문자 수가 궁금해졌고, Google Analytics를 적용했습니다.
 GA4 콘솔을 이용해 방문자 통계를 수집하고, 페이지 내 행동을 트래킹 할 수 있게 되었습니다.`,
     skills: [
@@ -73,7 +78,7 @@ GA4 콘솔을 이용해 방문자 통계를 수집하고, 페이지 내 행동�
       plantopia7,
       plantopia8,
     ],
-    git: 'https://github.com/thwlckd/plantopia-react',
+    git: ['https://github.com/thwlckd/plantopia-react'],
     web: 'https://plantopia-react.vercel.app',
     account: { id: 'elice@code.com', password: 'elice1234' },
     summary: '반려식물 가이드 및 다이어링 웹 앱 🌱',
@@ -110,7 +115,7 @@ React Query를 도입하여 컴포넌트 내부의 view/data layer를 구분하�
     period: '23.07 ~ 23.07 (2주)',
     thumbnail: fragrant1,
     images: [fragrant1, fragrant2, fragrant3, fragrant4, fragrant5],
-    git: 'https://github.com/thwlckd/fragrant-nodejs',
+    git: ['https://github.com/thwlckd/fragrant-nodejs'],
     summary: '향수 온라인 쇼핑몰 🛍️',
     description: `향수를 쉽게 구매 및 판매할 수 있는 온라인 쇼핑몰입니다.\n
 브랜드, 노트, 성별로 카테고라이징 하여 향수를 리스트 합니다.
@@ -146,7 +151,7 @@ Nodemailer를 이용해 이메일 인증 기능을 개발했습니다.
     period: '24.01 ~ 24.02 (5주)',
     thumbnail: sfaclog1,
     images: [sfaclog1, sfaclog2, sfaclog3, sfaclog4, sfaclog5, sfaclog6],
-    git: 'https://github.com/SFACLOG/sfaclog',
+    git: ['https://github.com/SFACLOG/sfaclog'],
     web: 'https://sfaclog-web.vercel.app',
     account: { id: 'imsi@google.com', password: '123456789!' },
     storybook:
@@ -180,11 +185,54 @@ Error Boundary를 적용하여 런타임의 에러 상황을 대비했습니다.
     tags: ['3인 팀 프로젝트', '개발자 커뮤니티', '블로그', '사이드 프로젝트'],
   },
   {
+    name: 'Todo App Series',
+    period: '23.11 ~',
+    thumbnail: todo1,
+    images: [todo1, todo2, todo3, todo4, todo5],
+    git: [
+      'https://github.com/thwlckd/zustand-todo',
+      'https://github.com/thwlckd/recoil-todo',
+      'https://github.com/thwlckd/rtk-todo',
+    ],
+    web: 'https://zustand-todo-hyub.vercel.app',
+    summary: '상태 관리 라이브러리로 만든 투두 앱 시리즈 ✅',
+    description: `상태 관리 라이브러리로 만든 투두 앱 시리즈입니다.
+인기 있는 상태 관리 라이브러리의 사용법과 그 특징을 직접 경험해 보기 위해 시작한 시리즈입니다.\n
+주요 기능
+- localStorage를 이용한 할 일 저장
+- 할 일 추가/완료/제거
+- 할 일 리스트 카테고라이징(All, Active, Done)\n
+현재 Zustand, Recoil, Redux Toolkit 3가지 버전의 투두 앱을 개발했으며, 다음 주자는 Jotai입니다.`,
+    role: `공식 문서를 기반으로 라이브러리의 컨셉과 사용법을 익혀 개발했습니다.
+아래는 세 가지 모두 써보고 느낀 특징에 대한 비교입니다.\n
+- Recoil
+훅 기반의 인터페이스가 리액트 훅과 상당히 유사 → 가장 사용하기 쉬웠음
+복잡한 상태의 변경을 관리하기 위한 솔루션이 필요 → 커스텀 훅을 이용한 액션 정의\n
+- Redux Toolkit
+Flux 패턴의 상태 관리 강제화 → 규모가 있는 복잡한 상태 관리에 유리
+Redux의 보일러 플레이트를 줄이고, immer.js를 내장하여 불변성 관리 손쉽게 가능\n
+- Zustand
+액션을 선언하는 방법(위치) 강제화 X → 동일하게 Flux 패턴을 따르는 RTK보다 자유도가 높음
+Redux Devtools extention 사용 가능\n
+정답인 라이브러리는 없고, 모두 상대적인 장단점을 가지고 있다고 느꼈습니다.
+프로젝트의 규모와 요구사항에 적절한 도구를 도입하여, 어떻게 효율적으로 상태를 관리할지에 대한 고민이 중요하다고 생각합니다.
+`,
+    skills: [
+      'React',
+      'Typescript',
+      'Styled Components',
+      'Zustand',
+      'Recoil',
+      'Redux Toolkit',
+    ],
+    tags: ['투두 리스트', '상태 관리 라이브러리'],
+  },
+  {
     name: '모바일 주차 요금 정산 서비스',
     period: '22.03 ~ 22.06',
     thumbnail: parking2,
     images: [parking1, parking2, parking3, parking4, parking5],
-    git: 'https://github.com/thwlckd/MobileParkingPayment-Python-App',
+    git: ['https://github.com/thwlckd/MobileParkingPayment-Python-App'],
     summary: '입출차 연동 주차 요금 사전 결제 앱 🚗',
     description: `출차 전 모바일 앱을 이용하여 간편하게 주차 요금을 사전 결제하는 서비스입니다.
 흔히 백화점에서 볼 수 있는 주차 요금 결제 키오스크를 모바일 앱으로 가져와 그 장점을 부각시켰습니다.\n
