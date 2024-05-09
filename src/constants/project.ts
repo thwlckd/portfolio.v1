@@ -92,7 +92,7 @@ Python의 Beautiful Soup를 이용하여 데이터를 크롤링하고 Pandas로 
 Firebase의 Authentication, Firestore, Storage를 이용해 백엔드 개발을 대체했고 Bass의 장단점을 경험할 수 있었습니다.
 강력한 구글의 보안을 기반으로 local/session 방식을 이용한 자동 로그인 및 OAuth 기능을 손쉽게 구현할 수 있는 점이 장점으로 다가왔습니다.
 반면 Firestore는 SQL를 사용할 수 없어 데이터 쿼리에 한계가 있다는 단점을 겪었고, 제공되는 API의 제한적인 기능을 이용해 불편함을 해결해야 했습니다. (LIKE, RAND 기능 제공 X)\n
-성능을 개선의 의도적 고민의 결과로 코드 스플리팅을 적용했습니다.
+성능 개선의 의도적 고민의 결과로 코드 스플리팅을 적용했습니다.
 앱의 각 섹션별 route를 Lazy loading 하여 최초 번들 사이즈 및 로딩 속도를 줄였고, Suspense의 fallback UI를 이용해 사용자 경험을 높였습니다.\n
 3주간의 스프린트를 마치고 UX/DX 개선을 목적으로 프로젝트를 리팩토링했습니다.
 React Query를 도입하여 컴포넌트 내부의 view/data layer를 구분하였습니다.
@@ -126,7 +126,7 @@ React Query를 도입하여 컴포넌트 내부의 view/data layer를 구분하�
 MVC 패턴의 auth, user, order api를 개발했습니다.
 Mongoose를 이용하여 정의한 데이터 스키마를 기반으로 DAO를 만들어 Model layer를 분리했습니다.
 Service layer는 비지니스 로직, Controller layer는 api 요청의 인터페이스 담당으로 역할을 분리하여 유지 보수/디버깅에 유리한 구조를 가져갔습니다.
-api 요 청간 처리를 위해 에러 처리 핸들러를 만들어 error.log 파일에 에러 로그를 남기도록 하여 에러 상황에 대비했습니다.
+api 요청 간 처리를 위해 에러 처리 핸들러를 만들어 error.log 파일에 에러 로그를 남기도록 하여 에러 상황에 대비했습니다.
 Postman을 이용해 api 테스트를 진행했습니다.\n
 Passport.js를 이용하여 jwt 인증 및 OAuth를 개발했습니다.
 로그인 성공 시 jwt를 발급하여 response 쿠키에 담아 클라이언트에 제공했습니다.
