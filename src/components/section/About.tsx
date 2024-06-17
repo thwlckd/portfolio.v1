@@ -70,6 +70,11 @@ const Profile = () => {
 
 const CAREERS = [
   {
+    title: 'Viva Republica(Toss)',
+    period: '2024.05 ~',
+    description: ['Frontend Developer Assistant'],
+  },
+  {
     title: '스팩스페이스',
     period: '2023.12 ~ 2024.02',
     description: [
