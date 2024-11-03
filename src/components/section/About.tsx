@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { GiMoebiusTriangle } from 'react-icons/gi';
 import useRefObserver from '@/hooks/useRefObserver';
 import Chip from '../common/Chip';
-import profile from '@/../public/images/profile.png';
+import profile from '@/assets/images/profile.png';
 
 export default function About() {
   const aboutRef = useRef(null);
